@@ -63,6 +63,6 @@ ln -sv $CWD/.vimrc ~/.vimrc
 ln -sv $CWD/.tmux.conf ~/.tmux.conf
 ln -sv $CWD/.gitconfig ~/.gitconfig
 ln -sv $CWD/bin ~/bin
-cp -iv $CWD/.termux ~/.termux
+cp -irv $CWD/.termux ~/
 
 echo -e "\u001b[32;1mDone.\u001b[0m"
