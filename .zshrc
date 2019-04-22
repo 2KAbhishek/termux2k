@@ -8,7 +8,7 @@
  COMPLETION_WAITING_DOTS="true"
 
 # Magic Enter
-MAGIC_ENTER_GIT_COMMAND="git status -v && exa -alh -s=extension -T -L=2 --git --group-directories-first && echo"
+MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s && echo"
 MAGIC_ENTER_OTHER_COMMAND="la && echo"
 
 # Plugins
@@ -18,7 +18,6 @@ plugins=(alias-tips
         emoji
         extract
         fancy-ctrl-z
-        fzf
         fast-syntax-highlighting
         git
         github
@@ -39,13 +38,13 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Prompt
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir vcs docker_machine virtualenv time)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history command_execution_time vi_mode background_jobs ram battery)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir vcs docker_machine virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode background_jobs)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{014}╭"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%K{black}%F{blue} \uf109 \uf156>%f%F{black}%k\ue0b0%f "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%K{black}%F{blue} \uf10b \uf156>%f%F{black}%k\ue0b0%f "
 
 # Segment
-DEFAULT_USER="abhishek"
+DEFAULT_USER="u0_a110"
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf489 %n@`hostname -f`"
 POWERLEVEL9K_BATTERY_LOW_THRESHOLD="30"
 POWERLEVEL9K_BATTERY_VERBOSE=false
@@ -60,7 +59,7 @@ POWERLEVEL9K_VI_INSERT_MODE_STRING="\ue62b"
 POWERLEVEL9K_TIME_FORMAT="%D{%a,%l:%M %p}"
 POWERLEVEL9K_PYTHON_ICON="\ue235"
 VIRTUAL_ENV_DISABLE_PROMPT=1
-POWERLEVEL9K_SHOW_CHANGESET=true
+#POWERLEVEL9K_SHOW_CHANGESET=true
 #POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$"\uf036"
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$"\uf038"
 
