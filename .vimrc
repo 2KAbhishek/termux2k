@@ -25,9 +25,16 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'godlygeek/tabular'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'Yggdroot/indentLine'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'joshdick/onedark.vim'
+
+" Vundle Ends
+call vundle#end()          
+filetype plugin indent on
 
 " Plugin Config
-let g:airline_theme='dark'
+let g:airline_theme='onedark'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:user_emmet_leader_key=','
@@ -37,12 +44,16 @@ nnoremap <Leader>e :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 inoremap jj <Esc> 
 
-" Vundle Ends
-call vundle#end()          
-filetype plugin indent on
-
 " Color Schemes
 set termguicolors
+autocmd ColorScheme * highlight! Normal ctermbg=NONE guibg=NONE " Always use terminal background
+colorscheme onedark
+
+" IndentLine
+let g:indentLine_char = ''
+let g:indentLine_first_char =  ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 1
 
 " Other general vim options:
 syntax on
