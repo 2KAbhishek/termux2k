@@ -34,10 +34,13 @@ call vundle#end()
 filetype plugin indent on
 
 " Plugin Config
-let g:airline_theme='onedark'
+let g:airline_theme='murmur'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:user_emmet_leader_key=','
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = "\uE0B0"
+let g:airline_right_sep = "\uE0B2"
 
 " Keybindings
 nnoremap <Leader>e :NERDTreeToggle<Enter>
