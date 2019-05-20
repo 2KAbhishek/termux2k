@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 EDITOR=vim 
 
 # Aliases
-alias la="ls -AXFb --group-directories-first --sort=extension"
+alias la="ls -AXF --group-directories-first" 
 alias mv="mv -iv"
 alias cp="cp -iv"
 alias rm="rm -Iv"
