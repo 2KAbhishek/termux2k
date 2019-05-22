@@ -121,7 +121,7 @@ EDITOR=vim
 alias la="ls -AXF --group-directories-first" 
 alias mv="mv -iv"
 alias cp="cp -iv"
-alias rm="rm -Iv"
+alias rm="rm -iv"
 alias ln="ln -sv"
 alias q="exit"
 
