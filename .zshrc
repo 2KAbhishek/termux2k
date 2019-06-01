@@ -8,8 +8,8 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Magic Enter
-MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s"
-MAGIC_ENTER_OTHER_COMMAND="la"
+MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s && echo"
+MAGIC_ENTER_OTHER_COMMAND="la && echo"
 
 # Plugins
 plugins=(alias-tips
