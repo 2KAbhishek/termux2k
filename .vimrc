@@ -8,7 +8,7 @@ set ignorecase     " Do case insensitive matching
 set incsearch      " Show partial matches for a search phrase
 set number         " Show numbers
 set relativenumber " Show relative numbers
-set undolevels=999 " Lots of these 
+set undolevels=999 " Lots of these
 set hls            " Highlight Search
 
 " Vundle Stuff
@@ -39,11 +39,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'joshdick/onedark.vim'
 
 " Vundle Ends
-call vundle#end()          
+call vundle#end()
 filetype plugin indent on
 
 " Plugin Config
-let g:airline_theme='murmur'
+let g:airline_theme='onedark'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:user_emmet_leader_key=','
@@ -54,7 +54,7 @@ let g:airline_right_sep = "\uE0B2"
 " Keybindings
 nnoremap <Leader>e :NERDTreeToggle<Enter>
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
-inoremap jj <Esc> 
+inoremap jj <Esc>
 
 " Color Schemes
 set termguicolors
@@ -76,4 +76,3 @@ set expandtab
 if has("autocmd")
    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\""
 endif
-
