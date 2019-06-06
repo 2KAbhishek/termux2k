@@ -10,6 +10,7 @@ set number         " Show numbers
 set relativenumber " Show relative numbers
 set undolevels=999 " Lots of these
 set hls            " Highlight Search
+set nomodeline
 
 " Vundle Stuff
 set rtp+=~/.vim/bundle/Vundle.vim
