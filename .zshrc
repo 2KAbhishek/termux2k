@@ -8,14 +8,12 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Magic Enter
-MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s && echo"
-MAGIC_ENTER_OTHER_COMMAND="la && echo"
+MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s && echo -e '\n'"
+MAGIC_ENTER_OTHER_COMMAND="la && echo -e '\n'"
 
 # Plugins
 plugins=(alias-tips
-        command-not-found
         dirhistory
-        emoji
         extract
         fancy-ctrl-z
         fast-syntax-highlighting
@@ -26,7 +24,8 @@ plugins=(alias-tips
         tmux
         web-search
         z
-        zsh-autosuggestions)
+        zsh-autosuggestions
+        zsh-navigation-tools)
 
 
 # Theme
@@ -124,7 +123,8 @@ alias cp="cp -iv"
 alias rm="rm -iv"
 alias ln="ln -sv"
 alias q="exit"
-
+alias fdir="find . -type d -name"
+alias ffil="find . -type f -name"
 alias cat="bat"
 
 alias tmux="tmux -u"
