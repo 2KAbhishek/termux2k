@@ -16,6 +16,10 @@ set softtabstop=4  " Tabs/Spaces interop
 set expandtab      " Expands tab to spaces
 set nomodeline     " Disable as a security precaution
 
+" Highlight non whitespace characters
+set listchars=tab:>~,nbsp:_,trail:.
+set list
+
 " Vundle Init
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -50,6 +54,12 @@ filetype plugin indent on
 
 " Keybindings
 inoremap jj <Esc> 
+
+" Drag Visual selections
+vnoremap K xkP`[V`]
+vnoremap U xp`[V`]
+vnoremap L >gv
+vnoremap H <gv
 
 " YouCompleteMe
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
