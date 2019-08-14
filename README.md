@@ -25,9 +25,3 @@ sh dot.sh -i # For installing dependencies
 
 > This repo also contains a few scripts in the `Scripts` directory.
 
-### Long Term Branches
-
-There are also two other branches:
-
-* `lite` - Has powerline disabled.
-* `master` - Main branch with configs for desktop usage.
