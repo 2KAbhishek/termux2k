@@ -1,48 +1,33 @@
 # Dotfiles
 
-My personal config files for everyone to use.
-Sadly this repo gets frequent commits. 😌😉
+My personal config files for everyone to use. Sadly this repo gets frequent commits. 😌😉
 
 ![Terminal](https://i.imgur.com/bsHwUz4.png)
 
-## Usage
+## Setup
 
-Run `setup.sh` for seting up, other specific steps given below.
-You can run `setup.sh` with `-i` or `--install` flags to install requirements.
-
-```bash
-sh setup.sh
-```
-
-### Vim
-
-Requirements:
-
-* [Vundle](https://github.com/VundleVim/Vundle.vim)
-
-### Zsh
-
-Requirements:
-
-* [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-
-### Compiz
-
-Import  `Compiz.profile` from preferences inside CompizConfig Settings Manager.
-
-### Conky
-
-`Conky_Sysinfo` goes into ~/.conky/, start conky with this command.
+Run `dot.sh` for seting up, other specific steps given below.
+You can run `dot.sh` with `-i` or `--install` flags to install requirements.
 
 ```bash
-conky -c ~/.conky/Conky_Sysinfo
+sh dot.sh # For setting up symlinks
+sh dot.sh -i # For installing dependencies
 ```
 
-You can also use Conky Manager.
+### Included Configurations
+
+* git : `~/.gitconfig`
+* ranger : `~/.config/ranger/`
+* termux : `~/.termux` & `~/.bin`
+* tmux : `~/.tmux.conf`
+* vim : `~/.vimrc`
+* zsh : `~/.zshrc`
+
+> This repo also contains a few scripts in the `Scripts` directory.
 
 ### Long Term Branches
 
 There are also two other branches:
-`termux` - Has specific tweaks for Termux and small screen usage.
-`lite` - Has no powerline glyphs, ideal for ssh.
+
+* `lite` - Has powerline disabled.
+* `master` - Main branch with configs for desktop usage.
