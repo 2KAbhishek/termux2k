@@ -23,7 +23,6 @@ plugins=(alias-tips
         fancy-ctrl-z
         fast-syntax-highlighting
         git
-        github
         globalias
         magic-enter
         tmux
