@@ -1,7 +1,6 @@
-set nocompatible
-set encoding=utf-8
-filetype off
-
+set nocompatible   " Disable vi compatibilty
+set encoding=utf-8 " Use UTF-8
+filetype off       " Disable filetype
 syntax on          " Turn on syntax highlighting
 set showmatch      " Show matching brackets
 set ignorecase     " Do case insensitive matching
@@ -15,10 +14,8 @@ set shiftwidth=4   " Indentation size
 set softtabstop=4  " Tabs/Spaces interop
 set expandtab      " Expands tab to spaces
 set nomodeline     " Disable as a security precaution
-
-" Highlight non whitespace characters
-set listchars=tab:>~,nbsp:_,trail:.
-set list
+set mouse=a        " Enable mouse mode
+set termguicolors  " Enable true colors
 
 " Vundle Init
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -45,13 +42,20 @@ Plugin 'gabrielelana/vim-markdown'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'joshdick/onedark.vim'
+Plugin 'sheerun/vim-polyglot'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'roxma/nvim-yarp'
+"Plugin 'roxma/vim-hug-neovim-rpc'
 
 " Vundle Ends
-call vundle#end()          
+call vundle#end()
 filetype plugin indent on
 
 " Keybindings
-inoremap jj <Esc> 
+inoremap jj <Esc>
+let mapleader = ','
+let g:user_emmet_leader_key=','
+map <Leader>e : NERDTreeToggle<CR>
 
 " Drag Visual selections
 vnoremap K xkP`[V`]
@@ -59,22 +63,32 @@ vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
 
-" YouCompleteMe
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
 " Airline
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = "\uE0B0"
 let g:airline_right_sep = "\uE0B2"
 
-" Emmet
-let g:user_emmet_leader_key=','
+" Always use terminal background
+autocmd ColorScheme * highlight! Normal ctermbg=NONE guibg=NONE
 
-" Color Schemes
-set termguicolors
-autocmd ColorScheme * highlight! Normal ctermbg=NONE guibg=NONE " Always use terminal background
+" One Dark
+let g:onedark_color_overrides = {
+\ "comment_grey": {"gui": "#69747C","cterm": "245", "cterm16": "8"},
+\ "gutter_fg_grey": { "gui": "#69747C", "cterm": "245", "cterm16": "8"}
+\}
+let g:onedark_terminal_italics = 1
 colorscheme onedark
+
+" IndentLine
+let g:indentLine_char =''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 1
+
+" Highlight non whitespace characters
+set listchars=tab:,nbsp:_,trail:
+set list
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -82,12 +96,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" IndentLine
-"let g:indentLine_char = ''
-let g:indentLine_char ='|'
-let g:indentLine_first_char = '>'
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 1
+" Deoplete
+"let g:deoplete#enable_at_startup = 1
+"inoremap <silent><expr><tab> pumvisible() ? "\<c-n>":"\<tab>"
+"inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>":"\<s-tab>
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
