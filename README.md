@@ -2,7 +2,7 @@
 
 My personal config files for everyone to use. Sadly this repo gets frequent commits. 😌😉
 
-![Terminal](https://i.imgur.com/bsHwUz4.png)
+![Terminal](https://i.imgur.com/eNQ7CIU.png)
 
 ## Setup
 
