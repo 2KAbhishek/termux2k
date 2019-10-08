@@ -173,6 +173,7 @@ alias ytdl="youtube-dl"
 export PATH=$PATH:/home/abhishek/.gem/ruby/2.6.0/bin
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
+clear
 
 #Functions
 function lc () {
