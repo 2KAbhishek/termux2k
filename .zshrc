@@ -21,6 +21,7 @@ plugins=(alias-tips
         dirhistory
         extract
         fancy-ctrl-z
+        fzf
         fast-syntax-highlighting
         git
         globalias
@@ -49,7 +50,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%K{black}%F{blue} \uf135
 
 # Segment
 DEFAULT_USER="u0_a374" # $USER is empty on termux, hard code it
-POWERLEVEL9K_CONTEXT_TEMPLATE="\uf489 %n@`hostname -f`"
+POWERLEVEL9K_CONTEXT_TEMPLATE="\uf489 %n@$(hostname -f)"
 POWERLEVEL9K_BATTERY_LOW_THRESHOLD="30"
 POWERLEVEL9K_BATTERY_VERBOSE=false
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
@@ -60,7 +61,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="\ue62b"
 POWERLEVEL9K_VI_INSERT_MODE_STRING="\ue62b"
-POWERLEVEL9K_TIME_FORMAT="%D{%a,%l:%M %p}"
+POWERLEVEL9K_TIME_FORMAT="%D{%a,%l:%M %P}"
 POWERLEVEL9K_PYTHON_ICON="\ue235"
 VIRTUAL_ENV_DISABLE_PROMPT=1
 #POWERLEVEL9K_SHOW_CHANGESET=true
@@ -118,11 +119,14 @@ POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND="white"
 source $ZSH/oh-my-zsh.sh
 
 # Environment
-EDITOR=vim 
+export EDITOR=vim 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Aliases
 alias cat="bat"
+alias ccp="clipcopy"
 alias cp="cp -iv"
+alias cpa="clippaste"
 alias df="grc df"
 alias diff="diff --color=auto"
 alias exag="exa -ahlT -L=1  -s=extension --git --group-directories-first"
@@ -136,11 +140,12 @@ alias la="ls -AXb --group-directories-first --sort=extension"
 alias last="grc last"
 alias ln="ln -sv"
 alias lsda="lsd -A --group-dirs first --classify"
+alias lsdo="lsd -A --group-dirs first --classify --recursive --depth=2"
 alias make="grc make"
 alias mount="grc mount"
 alias mtr="grc mtr"
 alias mv="mv -iv"
-alias ncdu="ncdu --color=dark"
+alias ncdu="ncdu --color=dark -x"
 alias open="xdg-open"
 alias pacai="pacaur -S"
 alias pacas="pacaur -Ss"
@@ -170,7 +175,8 @@ alias wdiff="grc wdiff"
 alias ytdl="youtube-dl"
 
 # Commands
-export PATH=$PATH:/home/abhishek/.gem/ruby/2.6.0/bin
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$PATH
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
 clear
