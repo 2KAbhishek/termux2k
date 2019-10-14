@@ -7,5 +7,3 @@
 	editor = vim
 [color]
 	ui = true
-[hub]
-	protocol = https
