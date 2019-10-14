@@ -48,14 +48,14 @@ case $option in
     mv -iv ~/.tmux.conf ~/.tmux.conf.old
     mv -iv ~/.vimrc ~/.vimrc.old
     mv -iv ~/.zshrc ~/.zshrc.old
-
+    mv -iv ~/.termux ~/.termux.old
     echo -e "\u001b[36;1m Adding symlinks...\u001b[0m"
     ln -sfnv "$PWD/.config/ranger/" ~/.config/ranger
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
     ln -sfnv "$PWD/.vimrc" ~/.vimrc
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
-
+    cp -irv "$PWD/.termux" ~/.termux
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
     ;;
 
