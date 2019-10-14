@@ -21,7 +21,6 @@ plugins=(alias-tips
         dirhistory
         extract
         fancy-ctrl-z
-        fzf
         fast-syntax-highlighting
         git
         globalias
