@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 SAVEHIST=99999
 
 # Magic Enter
-MAGIC_ENTER_GIT_COMMAND="git status -v && git status -s && echo -e '\n'"
+MAGIC_ENTER_GIT_COMMAND="git status -v && echo -e '\n'"
 MAGIC_ENTER_OTHER_COMMAND="la && echo -e '\n'"
 
 # Plugins
@@ -42,107 +42,97 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time vi_mode background_jobs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time_joined background_jobs ram_joined)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{014}╭"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%K{black}%F{blue} \uf135 >%f%F{black}%k\ue0b0%f "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%K{black}%F{blue} \uf135 %f%F{black}%k\ue0b1%f "
 
 # Segment
-DEFAULT_USER="u0_a374" # $USER is empty on termux, hard code it
+DEFAULT_USER="u0_a374"
 POWERLEVEL9K_CONTEXT_TEMPLATE="\uf489 %n@$(hostname -f)"
 POWERLEVEL9K_BATTERY_LOW_THRESHOLD="30"
 POWERLEVEL9K_BATTERY_VERBOSE=false
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="\ue62b"
 POWERLEVEL9K_VI_INSERT_MODE_STRING="\ue62b"
 POWERLEVEL9K_TIME_FORMAT="%D{%a,%l:%M %P}"
 POWERLEVEL9K_PYTHON_ICON="\ue235"
 VIRTUAL_ENV_DISABLE_PROMPT=1
-#POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_SHOW_CHANGESET=false
 #POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$"\uf036"
 #POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$"\uf038"
 
 #Colour
 POWERLEVEL9K_COLOR_SCHEME="dark"
-POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="033"
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="yellow"
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_CHARGED="046"
-POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND="046"
+POWERLEVEL9K_BATTERY_CHARGED="green"
+POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND="green"
 POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_CHARGING="208"
-POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND="208"
+POWERLEVEL9K_BATTERY_CHARGING="orange1"
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND="orange1"
 POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND="black"
-POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="049"
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="cyan"
 POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND="black"
 POWERLEVEL9K_BATTERY_LOW_BACKGROUND="red"
 POWERLEVEL9K_BATTERY_LOW_COLOR="red"
 POWERLEVEL9K_BATTERY_LOW_FOREGROUND="black"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND="196"
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND="green"
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="056"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="purple"
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND="056"
+POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND="purple"
 POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND="196"
+POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND="red"
 POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND="196"
+POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND="red"
 POWERLEVEL9K_CONTEXT_SUDO_FOREGROUND="black"
-POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND="196"
+POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND="red"
 POWERLEVEL9K_CONTEXT_REMOTE_SUDO_FOREGROUND="black"
-POWERLEVEL9K_DATE_BACKGROUND="242"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="027"
-POWERLEVEL9K_DIR_ETC_BACKGROUND="196"
-POWERLEVEL9K_DIR_HOME_BACKGROUND="027"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="027"
-POWERLEVEL9K_DIR_NOT_WRITABLE_BACKGROUND="196"
-POWERLEVEL9K_HISTORY_BACKGROUND="040"
-POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="076"
-POWERLEVEL9K_LOAD_WARNING_BACKGROUND="214"
-POWERLEVEL9K_OS_ICON_FOREGROUND="029"
-POWERLEVEL9K_RAM_BACKGROUND="220"
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND="196"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="blue"
+POWERLEVEL9K_DIR_ETC_BACKGROUND="red"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="blue"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="blue"
+POWERLEVEL9K_DIR_NOT_WRITABLE_BACKGROUND="red"
+POWERLEVEL9K_HISTORY_BACKGROUND="green"
+POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="green"
+POWERLEVEL9K_LOAD_WARNING_BACKGROUND="yellow"
+POWERLEVEL9K_OS_ICON_FOREGROUND="darkcyan"
+POWERLEVEL9K_RAM_BACKGROUND="yellow"
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="black"
-POWERLEVEL9K_STATUS_OK_BACKGROUND="040"
+POWERLEVEL9K_STATUS_OK_BACKGROUND="green"
 POWERLEVEL9K_STATUS_OK_FOREGROUND="black"
-POWERLEVEL9K_TIME_BACKGROUND="029"
-POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND="033"
+POWERLEVEL9K_TIME_BACKGROUND="darkcyan"
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND="blue"
 POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND="black"
-POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND="000"
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND="black"
 POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND="white"
 
 source $ZSH/oh-my-zsh.sh
-
-# Environment
-export EDITOR=vim 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Aliases
 alias cat="bat"
 alias ccp="clipcopy"
 alias cp="cp -iv"
 alias cpa="clippaste"
-alias df="grc df"
 alias diff="diff --color=auto"
 alias exag="exa -ahlT -L=1  -s=extension --git --group-directories-first"
 alias fdir='find . -type d -name'
 alias ffil='find . -type f -name'
-alias gcc="grc gcc"
 alias grep="grep --color=auto"
-alias iwconfig="grc iwconfig"
 alias jupn="jupyter notebook"
 alias la="ls -AXb --group-directories-first --sort=extension"
-alias last="grc last"
 alias ln="ln -sv"
 alias lsda="lsd -A --group-dirs first --classify"
 alias lsdo="lsd -A --group-dirs first --classify --recursive --depth=2"
-alias make="grc make"
-alias mount="grc mount"
-alias mtr="grc mtr"
 alias mv="mv -iv"
 alias ncdu="ncdu --color=dark -x"
 alias open="xdg-open"
@@ -153,9 +143,7 @@ alias pacq="pacman -Qi"
 alias pacr="sudo pacman -R"
 alias pacs="pacman -Ss"
 alias pacu="sudo pacman -Syu"
-alias ping="grc ping"
 alias pp="prettyping --nolegend"
-alias ps="grc ps"
 alias q="exit"
 alias rm="rm -irv"
 alias sysd="sudo systemctl disable"
@@ -166,18 +154,39 @@ alias systa="sudo systemctl start"
 alias systo="sudo systemctl stop"
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias traceroute="grc traceroute"
 alias trii="trizen -S --noedit"
 alias tris="trizen -Ss --noedit"
 alias triu="trizen -Syu --noedit"
-alias wdiff="grc wdiff"
+alias yayi="yay -S"
+alias yayu="yay -Syu"
 alias ytdl="youtube-dl"
 
+if hash "grc -h" 2>/dev/null; then
+    alias df="grc df"
+    alias gcc="grc gcc"
+    alias iwconfig="grc iwconfig"
+    alias last="grc last"
+    alias make="grc make"
+    alias mount="grc mount"
+    alias mtr="grc mtr"
+    alias ping="grc ping"
+    alias ps="grc ps"
+    alias traceroute="grc traceroute"
+    alias wdiff="grc wdiff"
+fi
+
+if hash kdeconnect-cli 2>/dev/null; then
+    alias send="kdeconnect-cli -d "$(kdeconnect-cli -a --id-only)" --share"
+fi
+
 # Commands
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-export PATH=$HOME/.node_modules/bin:$PATH
+export EDITOR=vim
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$PATH
+export PATH=$HOME/Applications/bin:$PATH
 clear
 
 #Functions
