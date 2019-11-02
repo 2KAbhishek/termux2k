@@ -43,6 +43,7 @@ case $option in
 
 "5")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
     echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
+    mv -iv ~/bin ~/bin.old
     mv -iv ~/.config/ranger ~/.config/ranger.old
     mv -iv ~/.gitconfig ~/.gitconfig.old
     mv -iv ~/.tmux.conf ~/.tmux.conf.old
@@ -50,6 +51,7 @@ case $option in
     mv -iv ~/.zshrc ~/.zshrc.old
     mv -iv ~/.termux ~/.termux.old
     echo -e "\u001b[36;1m Adding symlinks...\u001b[0m"
+    ln -sfnv "$PWD/bin/" ~/bin
     ln -sfnv "$PWD/.config/ranger/" ~/.config/ranger
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
