@@ -1,27 +1,10 @@
-# Dotfiles
+# Oh-My-Termux
 
-My personal config files for everyone to use. Sadly this repo gets frequent commits. 😌😉
+Bootstrap termux with oh-my-zsh, custom p9k prompt, vim, tmux, ranger & powerline fonts.
 
-![Terminal](https://i.imgur.com/eNQ7CIU.png)
+![Termux](https://i.imgur.com/cTt8z6P.png)
 
 ## Setup
 
-Run `dot.sh` for seting up, other specific steps given below.
-You can run `dot.sh` with `-i` or `--install` flags to install requirements.
-
-```bash
-sh dot.sh # For setting up symlinks
-sh dot.sh -i # For installing dependencies
-```
-
-### Included Configurations
-
-* git : `~/.gitconfig`
-* ranger : `~/.config/ranger/`
-* termux : `~/.termux` & `~/.bin`
-* tmux : `~/.tmux.conf`
-* vim : `~/.vimrc`
-* zsh : `~/.zshrc`
-
-> This repo also contains a few scripts in the `Scripts` directory.
+Run `./setup` and follow on screen instructions for seting up.
 
