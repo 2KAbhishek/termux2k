@@ -95,9 +95,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'w0rp/ale'
-" Plugin 'Shougo/deoplete.nvim'
-" Plugin 'roxma/nvim-yarp'
-" Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
@@ -112,12 +109,6 @@ let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep = "\uE0B0"
 let g:airline_right_sep = "\uE0B2"
-
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-" inoremap <silent><expr><tab> pumvisible() ? "\<c-n>":"\<tab>"
-" inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>":"\<s-tab>
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Easymotion
 let g:EasyMotion_smartcase = 1
@@ -170,11 +161,12 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 " IndentLine
+let g:indentLine_conceallevel = 2
 let g:indentLine_char ='|'
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
-autocmd FileType markdown let g:indentLine_enabled=0
+let g:indentLine_concealcursor = ""
 
 " NERDTree
 map <Leader>e : NERDTreeToggle<CR>
@@ -192,3 +184,4 @@ if !exists('$TMUX')
     let g:onedark_terminal_italics = 1
 endif
 colorscheme onedark
+

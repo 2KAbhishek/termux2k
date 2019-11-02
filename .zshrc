@@ -120,73 +120,29 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias cat="bat"
-alias ccp="clipcopy"
-alias cp="cp -iv"
-alias cpa="clippaste"
+alias cp="cp -irv"
 alias diff="diff --color=auto"
-alias exag="exa -ahlT -L=1  -s=extension --git --group-directories-first"
 alias fdir='find . -type d -name'
 alias ffil='find . -type f -name'
 alias grep="grep --color=auto"
-alias jupn="jupyter notebook"
 alias la="ls -AXb --group-directories-first --sort=extension"
 alias ln="ln -sv"
-alias lsda="lsd -A --group-dirs first --classify"
-alias lsdo="lsd -A --group-dirs first --classify --recursive --depth=2"
 alias mv="mv -iv"
 alias ncdu="ncdu --color=dark -x"
 alias open="xdg-open"
-alias pacai="pacaur -S"
-alias pacas="pacaur -Ss"
-alias paci="sudo pacman -S"
-alias pacq="pacman -Qi"
-alias pacr="sudo pacman -R"
-alias pacs="pacman -Ss"
-alias pacu="sudo pacman -Syu"
-alias pp="prettyping --nolegend"
 alias q="exit"
 alias rm="rm -irv"
-alias sysd="sudo systemctl disable"
-alias syse="sudo systemctl enable"
-alias sysr="sudo systemctl restart"
-alias syss="systemctl status"
-alias systa="sudo systemctl start"
-alias systo="sudo systemctl stop"
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias trii="trizen -S --noedit"
-alias tris="trizen -Ss --noedit"
-alias triu="trizen -Syu --noedit"
-alias yayi="yay -S"
-alias yayu="yay -Syu"
+alias vimrc="vim ~/.vimrc"
 alias ytdl="youtube-dl"
-
-if hash "grc -h" 2>/dev/null; then
-    alias df="grc df"
-    alias gcc="grc gcc"
-    alias iwconfig="grc iwconfig"
-    alias last="grc last"
-    alias make="grc make"
-    alias mount="grc mount"
-    alias mtr="grc mtr"
-    alias ping="grc ping"
-    alias ps="grc ps"
-    alias traceroute="grc traceroute"
-    alias wdiff="grc wdiff"
-fi
-
-if hash kdeconnect-cli 2>/dev/null; then
-    alias send="kdeconnect-cli -d "$(kdeconnect-cli -a --id-only)" --share"
-fi
+alias zshrc="vim ~/.zshrc"
 
 # Commands
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-export PATH=$HOME/.node_modules/bin:$PATH
-export PATH=$HOME/Applications/bin:$PATH
 clear
 
 #Functions
