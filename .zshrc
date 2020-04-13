@@ -124,6 +124,7 @@ alias cp="cp -irv"
 alias diff="diff --color=auto"
 alias fdir='find . -type d -name'
 alias ffil='find . -type f -name'
+alias gtop='cd $(git rev-parse --show-toplevel)'
 alias grep="grep --color=auto"
 alias la="ls -AXb --group-directories-first --sort=extension"
 alias ln="ln -sv"
