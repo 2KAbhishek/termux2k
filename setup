@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Setup script for Dotfiles
+#Setup script for Oh-My-Termux
 echo -e "\u001b[32;1m Setting up Dotfiles...\u001b[0m"
 
 echo -e " \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
@@ -42,7 +42,10 @@ case $option in
     ;;
 
 "5")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
-    echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
+    echo -e "\u001b[33;1m Backup existing files? (y/n) \u001b[0m"
+    read -r backupOption
+    if [[ $backupOption == "y" ]]; then
+        echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
     mv -iv ~/bin ~/bin.old
     mv -iv ~/.config/nvim ~/.config/nvim.old
     mv -iv ~/.config/ranger ~/.config/ranger.old
@@ -51,6 +54,11 @@ case $option in
     mv -iv ~/.vimrc ~/.vimrc.old
     mv -iv ~/.zshrc ~/.zshrc.old
     mv -iv ~/.termux ~/.termux.old
+    echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
+    else
+        echo -e "\u001b[36;1m Skipping backups. \u001b[0m"
+    fi
+
     echo -e "\u001b[36;1m Adding symlinks...\u001b[0m"
     ln -sfnv "$PWD/bin/" ~/bin
     ln -sfnv "$PWD/.config/nvim/" ~/.config/nvim
@@ -59,7 +67,7 @@ case $option in
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
     ln -sfnv "$PWD/.vimrc" ~/.vimrc
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
-    cp -irv "$PWD/.termux" ~/.termux
+    cp -iurv "$PWD/.termux" ~/.termux
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
     ;;
 
