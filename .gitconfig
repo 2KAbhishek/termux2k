@@ -1,11 +1,11 @@
 [user]
-	email = keshri.abhishek63@gmail.com
+    email = keshri.abhishek63@gmail.com
     name = Abhishek Keshri
 [credential]
-	helper = cache --timeout 3600
+    helper = cache --timeout 3600
 [core]
-	editor = vim
+    editor = nvim
 [color]
-	ui = true
+    ui = true
 [protocol]
-	version = 2
+    version = 2
