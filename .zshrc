@@ -135,12 +135,13 @@ alias q="exit"
 alias rm="rm -irv"
 alias tmux="tmux -u"
 alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias vimrc="vim ~/.vimrc"
+alias vim="nvim"
+alias vimrc="$EDITOR ~/.vimrc"
 alias ytdl="youtube-dl"
-alias zshrc="vim ~/.zshrc"
+alias zshrc="$EDITOR ~/.zshrc"
 
 # Commands
-export EDITOR=vim
+export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
