@@ -5,6 +5,10 @@
     helper = cache --timeout 3600
 [core]
     editor = nvim
+    pager = delta --dark --theme='OneHalfDark' --highlight-removed
+[interactive]
+    diffFilter = delta --dark --color-only --theme='OneHalfDark' --highlight-removed
+
 [color]
     ui = true
 [protocol]
