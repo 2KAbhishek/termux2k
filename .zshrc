@@ -118,28 +118,6 @@ POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND="white"
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
-alias cat="bat"
-alias cp="cp -irv"
-alias diff="diff --color=auto"
-alias fdir='find . -type d -name'
-alias ffil='find . -type f -name'
-alias gtop='cd "$(git rev-parse --show-toplevel)"'
-alias grep="grep --color=auto"
-alias la="ls -AXb --group-directories-first --sort=extension"
-alias ln="ln -sv"
-alias mv="mv -iv"
-alias ncdu="ncdu --color=dark -x"
-alias open="xdg-open"
-alias q="exit"
-alias rm="rm -irv"
-alias tmux="tmux -u"
-alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
-alias vim="nvim"
-alias vimrc="$EDITOR ~/.vimrc"
-alias ytdl="youtube-dl"
-alias zshrc="$EDITOR ~/.zshrc"
-
 # Commands
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -180,3 +158,26 @@ function man() {
         PATH="$HOME/bin:$PATH" \
         man "$@"
 }
+
+# Aliases
+alias cat="bat"
+alias cp="cp -irv"
+alias diff="diff --color=auto"
+alias fdir='find . -type d -name'
+alias ffil='find . -type f -name'
+alias gtop='cd "$(git rev-parse --show-toplevel)"'
+alias grep="grep --color=auto"
+alias la="ls -AXb --group-directories-first --sort=extension"
+alias ln="ln -sv"
+alias mv="mv -iv"
+alias ncdu="ncdu --color=dark -x"
+alias open="xdg-open"
+alias q="exit"
+alias rm="rm -irv"
+alias tmux="tmux -u"
+alias tmuxm="tmux new-session \; split-window -h \; split-window -v \; attach"
+alias vim="nvim"
+alias vimrc="$EDITOR ~/.vimrc"
+alias ytdl="youtube-dl"
+alias zshrc="$EDITOR ~/.zshrc"
+
