@@ -123,7 +123,9 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
-clear
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$PATH
+export PATH=$HOME/Applications/bin:$PATH
 
 #Functions
 function lc() {
