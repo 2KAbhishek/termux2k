@@ -124,10 +124,12 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export GREP_COLOR="1;32"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-export PATH=$HOME/.node_modules/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
+
 export PATH=$HOME/Applications/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$PATH
 
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp-install zsh-wcomp-install zsh-ccomp zsh-wcomp)"
 
