@@ -148,35 +148,35 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias: "
 clear
 
 #Functions
-function lc () {
-    cd $1 &&
-    la $2
+function lc() {
+    cd "$1" && la "$2"
 }
 
-mkcd ()
-{
-    mkdir -p -- "$1" &&
-    cd -P -- "$1"
+function mcd() {
+    mkdir -p -- "$1" && cd -P -- "$1"
 }
 
 function tmux-clean() {
     tmux list-sessions | grep -E -v '\(attached\)$' | while IFS='\n' read line; do
-    tmux kill-session -t "${line%%:*}"
+        tmux kill-session -t "${line%%:*}"
     done
 }
 
-function man() {
-     env \
-         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-         LESS_TERMCAP_md=$(printf "\e[1;36m") \
-         LESS_TERMCAP_me=$(printf "\e[0m") \
-         LESS_TERMCAP_se=$(printf "\e[0m") \
-         LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-         LESS_TERMCAP_ue=$(printf "\e[0m") \
-         LESS_TERMCAP_us=$(printf "\e[1;32m") \
-         PAGER="${commands[less]:-$PAGER}" \
-         _NROFF_U=1 \
-         PATH="$HOME/bin:$PATH" \
-             man "$@"
+function xin() {
+    (cd "${1}" && shift && ${@})
 }
 
+function man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;36m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        PAGER="${commands[less]:-$PAGER}" \
+        _NROFF_U=1 \
+        PATH="$HOME/bin:$PATH" \
+        man "$@"
+}
