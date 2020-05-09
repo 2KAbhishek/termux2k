@@ -159,6 +159,10 @@ function man() {
         man "$@"
 }
 
+function mlc () {
+    find $1 -name \*.md -exec markdown-link-check -p {} \;
+}
+
 # Aliases
 alias cat="bat"
 alias cp="cp -irv"
