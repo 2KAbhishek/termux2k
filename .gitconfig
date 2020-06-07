@@ -13,3 +13,5 @@
     ui = true
 [protocol]
     version = 2
+[pull]
+	rebase = false
