@@ -1,5 +1,3 @@
-<div align="center">
-
 # Oh-My-Termux
 
 ![Size](https://img.shields.io/github/repo-size/2kabhishek/Oh-My-Termux?style=plastic&color=0f0&label=Size)
@@ -13,7 +11,6 @@
 Bootstrap termux with oh-my-zsh, custom p9k prompt, vim, tmux, ranger & powerline fonts.
 ![Termux](https://i.imgur.com/cTt8z6P.png)
 
-</div>
 
 ## Setup
 
@@ -23,5 +20,4 @@ cd Oh-My-Termux
 ./setup # Follow on screen instructions to set up everything.
 ```
 
-Please consider hitting the ⭐ star button if this repo was useful to you, any contributions and suggestions are welcome.
 
