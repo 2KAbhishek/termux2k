@@ -7,9 +7,9 @@
 ![Watchers](https://img.shields.io/github/watchers/2kabhishek/Oh-My-Termux?style=plastic&color=ff5500&label=Watchers)
 ![Contributors](https://img.shields.io/github/contributors/2kabhishek/Oh-My-Termux?style=plastic&color=f0f&label=Contributors)
 ![License](https://img.shields.io/github/license/2kabhishek/Oh-My-Termux?style=plastic&color=555&label=License)
+![Termux](https://i.imgur.com/cTt8z6P.png)
 
 Bootstrap termux with oh-my-zsh, custom p9k prompt, vim, tmux, ranger & powerline fonts.
-![Termux](https://i.imgur.com/cTt8z6P.png)
 
 
 ## Setup
