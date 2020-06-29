@@ -12,7 +12,6 @@
 
 Bootstrap termux with oh-my-zsh, custom p9k prompt, vim, tmux, ranger & powerline fonts.
 
-
 ## Setup
 
 ```bash
@@ -20,5 +19,3 @@ git clone https://github.com/2kabhishek/Oh-My-Termux
 cd Oh-My-Termux
 ./setup # Follow on screen instructions to set up everything.
 ```
-
-
