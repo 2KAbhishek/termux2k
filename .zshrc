@@ -175,8 +175,11 @@ function mlc () {
 alias cat="bat"
 alias cp="cp -irv"
 alias diff="diff --color=auto"
-alias fdir='find . -type d -name'
-alias ffil='find . -type f -name'
+alias fdir="find . -type d -name"
+alias ffil="find . -type f -name"
+alias gcma="git commit --amend -m"
+alias gdh="git diff HEAD"
+alias gmv="git mv"
 alias gtop='cd "$(git rev-parse --show-toplevel)"'
 alias grep="grep --color=auto"
 alias la="ls -AXb --group-directories-first --sort=extension"
