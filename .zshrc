@@ -203,3 +203,6 @@ alias zshrc="$EDITOR ~/.zshrc"
 
 alias -s md=vim
 
+alias -g wcc="| wc -m"
+alias -g wcl="| wc -l"
+alias -g wcw="| wc -w"
