@@ -201,3 +201,5 @@ alias vimrc="$EDITOR ~/.vimrc"
 alias ytdl="youtube-dl"
 alias zshrc="$EDITOR ~/.zshrc"
 
+alias -s md=vim
+
