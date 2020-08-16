@@ -47,6 +47,7 @@ case $option in
     if [[ $backupOption == "y" ]]; then
         echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
     mv -iv ~/bin ~/bin.old
+    mv -iv ~/.config/bat/config ~/.config/bat/config.old
     mv -iv ~/.config/nvim ~/.config/nvim.old
     mv -iv ~/.config/ranger ~/.config/ranger.old
     mv -iv ~/.gitconfig ~/.gitconfig.old
@@ -61,6 +62,7 @@ case $option in
 
     echo -e "\u001b[36;1m Adding symlinks...\u001b[0m"
     ln -sfnv "$PWD/bin/" ~/bin
+    ln -sfnv "$PWD/.config/bat/config" ~/.config/bat/config
     ln -sfnv "$PWD/.config/nvim/" ~/.config/nvim
     ln -sfnv "$PWD/.config/ranger/" ~/.config/ranger
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
