@@ -206,3 +206,7 @@ alias -s md=vim
 alias -g wcc="| wc -m"
 alias -g wcl="| wc -l"
 alias -g wcw="| wc -w"
+
+# Local Configurations
+test -f ~/.bashrc.local && source ~/.bashrc.local
+
