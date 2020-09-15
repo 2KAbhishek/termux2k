@@ -208,5 +208,5 @@ alias -g wcl="| wc -l"
 alias -g wcw="| wc -w"
 
 # Local Configurations
-test -f ~/.bashrc.local && source ~/.bashrc.local
+test -f ~/.shrc.local && source ~/.shrc.local
 
