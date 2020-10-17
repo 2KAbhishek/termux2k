@@ -192,6 +192,7 @@ alias ncdu="ncdu --color=dark -x"
 alias open="xdg-open"
 alias q="exit"
 alias rm="rm -irv"
+alias rmf="rm -rf"
 alias reload="source ~/.zshrc"
 alias shad="ssh-add ~/.ssh/id_rsa"
 alias shag='eval "$(ssh-agent -s)"'
