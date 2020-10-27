@@ -173,6 +173,10 @@ function mlc () {
 }
 
 # Aliases
+alias apti="sudo apt install"
+alias apts="apt search"
+alias aptr="sudo apt remove"
+alias aptq="apt show"
 alias cat="bat"
 alias cp="cp -irv"
 alias diff="diff --color=auto"
