@@ -31,8 +31,11 @@ plugins=(alias-tips
     web-search
     z
     zsh-autosuggestions
+    zsh-completions
     zsh-navigation-tools)
 
+# Modules
+autoload -U compinit && compinit #Keep at last
 
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
