@@ -35,6 +35,7 @@ plugins=(alias-tips
     zsh-navigation-tools)
 
 # Modules
+autoload -U zmv
 autoload -U compinit && compinit #Keep at last
 
 # Theme
