@@ -8,7 +8,7 @@
 ![Contributors](https://img.shields.io/github/contributors/2kabhishek/Oh-My-Termux?style=plastic&color=f0f&label=Contributors)
 ![License](https://img.shields.io/github/license/2kabhishek/Oh-My-Termux?style=plastic&color=555&label=License)
 
-![Termux](https://i.imgur.com/cTt8z6P.png)
+![Termux](https://raw.githubusercontent.com/2KAbhishek/Oh-My-Termux/master/images/screenshot.jpg)
 
 Bootstrap termux with oh-my-zsh, custom p9k prompt, vim, tmux, ranger & powerline fonts.
 
