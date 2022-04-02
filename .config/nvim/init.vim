@@ -133,7 +133,7 @@ nmap <leader>q :bw<CR>
 nmap <leader>w :w<CR>
 nmap <leader>W :wq<CR>
 nmap <leader>r :source ~/.config/nvim/init.vim <CR>
-
+nmap <leader>G :Git <CR>
 
 " FZF
 nnoremap <leader>p :Files<Cr>
