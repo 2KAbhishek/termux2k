@@ -34,5 +34,5 @@
     path = ~/.config/delta/delta.gitconfig
 
 [delta]
-    features = mantis-shrimp
+    features = mantis-shrimp-lite
 
