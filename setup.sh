@@ -1,14 +1,121 @@
 #!/bin/bash
 
-#Setup script for Oh-My-Termux
+# Setup script for Oh-My-Termux
+function install_oh_my_zsh {
+    echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+}
+
+function backup_configs {
+    echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
+    mv -iv ~/bin ~/bin.old
+    mv -iv ~/.termux ~/.termux.old
+    mv -iv ~/.config/bat/config ~/.config/bat/config.old
+    mv -iv ~/.config/broot/conf.toml ~/.config/broot/conf.toml.old
+    mv -iv ~/.config/cmus/darkwind.theme ~/.config/cmus/darkwind.theme.old
+    mv -iv ~/.config/delta ~/.config/delta.old
+    mv -iv ~/.config/htop ~/.config/htop.old
+    mv -iv ~/.config/nvim ~/.config/nvim.old
+    mv -iv ~/.config/ranger ~/.config/ranger.old
+    mv -iv ~/.config/shell ~/.config/shell.old
+    mv -iv ~/.bashrc ~/.bashrc.old
+    mv -iv ~/.gitconfig ~/.gitconfig.old
+    mv -iv ~/.p10k.zsh ~/.p10k.zsh.old
+    mv -iv ~/.pystartup ~/.pystartup.old
+    mv -iv ~/.tmux.conf ~/.tmux.conf.old
+    mv -iv ~/.vimrc ~/.vimrc.old
+    mv -iv ~/.zshrc ~/.zshrc.old
+    echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
+}
+
+function setup_symlinks {
+    echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
+    ln -sfnv "$PWD/bin" ~/bin
+    cp -iurv "$PWD/termux" ~/.termux
+    ln -sfnv "$PWD/.config/bat/" ~/.config/
+    ln -sfnv "$PWD/.config/broot/" ~/.config/
+    ln -sfnv "$PWD/.config/cmus/" ~/.config/
+    ln -sfnv "$PWD/.config/delta/" ~/.config/
+    ln -sfnv "$PWD/.config/htop/" ~/.config/
+    ln -sfnv "$PWD/.config/nvim" ~/.config/
+    ln -sfnv "$PWD/.config/ranger/" ~/.config/
+    ln -sfnv "$PWD/.config/shell" ~/.config/
+    ln -sfnv "$PWD/.bashrc" ~/
+    ln -sfnv "$PWD/.gitconfig" ~/
+    ln -sfnv "$PWD/.p10k.zsh" ~/
+    ln -sfnv "$PWD/.pystartup" ~/
+    ln -sfnv "$PWD/.tmux.conf" ~/
+    ln -sfnv "$PWD/.vimrc" ~/
+    ln -sfnv "$PWD/.zshrc" ~/
+}
+
+function install_zsh_plugins {
+    echo -e "\u001b[7m Installing zsh plugins...\u001b[0m"
+    git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+    git clone https://github.com/zdharma/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+    git clone https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/alias-tips
+    git clone https://github.com/unixorn/git-extra-commands.git ~/.oh-my-zsh/custom/plugins/git-extra-commands
+    git clone https://github.com/Aloxaf/fzf-tab.git ~/.oh-my-zsh/custom/plugins/fzf-tab
+    git clone https://github.com/hlissner/zsh-autopair ~/.oh-my-zsh/custom/plugins/zsh-autopair
+    git clone https://github.com/MichaelAquilina/zsh-auto-notify.git ~/.oh-my-zsh/custom/plugins/auto-notify
+}
+
+function install_vim_plugins {
+    echo -e "\u001b[7m Installing plugin manager \u001b[0m"
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    echo -e "\u001b[7m Installing plugins for vim and nvim... \u001b[0m"
+    vim +PlugUpdate +qall
+    nvim -c 'PlugUpdate | PlugClean | quitall'
+}
+
+function install_tmux_plugins {
+    echo -e "\u001b[7m Installing tmux plugins... \u001b[0m"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    tmux start-server
+    tmux new-session -d
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+    tmux kill-server
+}
+
+function distro_tweaks {
+    echo -e "\u001b[7m Distro specific tweaks... \u001b[0m"
+    bash "$PWD"/scripts/local_distro.sh
+}
+
+function setup_dotfiles {
+    echo -e "\u001b[7m Setting up Dotfiles... \u001b[0m"
+    install_oh_my_zsh
+    backup_configs
+    setup_symlinks
+    install_zsh_plugins
+    install_vim_plugins
+    install_tmux_plugins
+    distro_tweaks
+    echo -e "\u001b[7m Done! \u001b[0m"
+}
+
+if [ "$1" = "--all" -o "$1" = "-a" ]; then
+    setup_dotfiles
+    exit 0
+fi
+
+# Menu TUI
 echo -e "\u001b[32;1m Setting up Dotfiles...\u001b[0m"
 
 echo -e " \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
 echo -e "  \u001b[34;1m (1) Install oh-my-zsh \u001b[0m"
-echo -e "  \u001b[34;1m (2) Install zsh plugins \u001b[0m"
-echo -e "  \u001b[34;1m (3) Install vim plugins \u001b[0m"
-echo -e "  \u001b[34;1m (4) Install tmux plugins \u001b[0m"
-echo -e "  \u001b[34;1m (5) Setup symlinks \u001b[0m"
+echo -e "  \u001b[34;1m (2) Backup current config \u001b[0m"
+echo -e "  \u001b[34;1m (3) Setup symlinks \u001b[0m"
+echo -e "  \u001b[34;1m (4) Install zsh plugins \u001b[0m"
+echo -e "  \u001b[34;1m (5) Install vim plugins \u001b[0m"
+echo -e "  \u001b[34;1m (6) Install tmux plugins \u001b[0m"
+echo -e "  \u001b[34;1m (7) Distro specific tweaks \u001b[0m"
 echo -e "  \u001b[31;1m (0) Exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -17,68 +124,41 @@ read -r option
 
 case $option in
 
-"1")echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+"1")
+    install_oh_my_zsh
     ;;
 
-"2")echo -e "\u001b[7m Installing zsh plugins...\u001b[0m"
-    git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-    git clone https://github.com/zdharma/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-    git clone https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/alias-tips
+"2")
+    backup_configs
     ;;
 
-"3")echo -e "\u001b[7m Installing vim plugins... \u001b[0m"
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginUpdate +qall
+"3")
+    setup_symlinks
     ;;
 
-"4")echo -e "\u001b[7m Installing tmux plugins... \u001b[0m"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    tmux start-server
-    tmux new-session -d
-    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
-    tmux kill-server
+"4")
+    install_zsh_plugins
     ;;
 
-"5")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
-    echo -e "\u001b[33;1m Backup existing files? (y/n) \u001b[0m"
-    read -r backupOption
-    if [[ $backupOption == "y" ]]; then
-        echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
-    mv -iv ~/bin ~/bin.old
-    mv -iv ~/.config/bat/config ~/.config/bat/config.old
-    mv -iv ~/.config/nvim ~/.config/nvim.old
-    mv -iv ~/.config/ranger ~/.config/ranger.old
-    mv -iv ~/.gitconfig ~/.gitconfig.old
-    mv -iv ~/.tmux.conf ~/.tmux.conf.old
-    mv -iv ~/.vimrc ~/.vimrc.old
-    mv -iv ~/.zshrc ~/.zshrc.old
-    mv -iv ~/.termux ~/.termux.old
-    echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
-    else
-        echo -e "\u001b[36;1m Skipping backups. \u001b[0m"
-    fi
-
-    echo -e "\u001b[36;1m Adding symlinks...\u001b[0m"
-    ln -sfnv "$PWD/bin/" ~/bin
-    ln -sfnv "$PWD/.config/bat/config" ~/.config/bat/config
-    ln -sfnv "$PWD/.config/nvim/" ~/.config/nvim
-    ln -sfnv "$PWD/.config/ranger/" ~/.config/ranger
-    ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
-    ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
-    ln -sfnv "$PWD/.vimrc" ~/.vimrc
-    ln -sfnv "$PWD/.zshrc" ~/.zshrc
-    cp -iurv "$PWD/.termux" ~/.termux
-    echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
+"5")
+    install_vim_plugins
     ;;
 
-"0")echo -e "\u001b[32;1m Bye! \u001b[0m"
+"6")
+    install_tmux_plugins
+    ;;
+
+"7")
+    distro_tweaks
+    ;;
+
+"0")
+    echo -e "\u001b[32;1m Bye! \u001b[0m"
     exit 0
     ;;
 
-*)echo -e "\u001b[31;1m Invalid option entered! \u001b[0m"
+*)
+    echo -e "\u001b[31;1m Invalid option entered! \u001b[0m"
     exit 1
     ;;
 esac
