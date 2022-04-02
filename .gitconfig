@@ -1,17 +1,38 @@
 [user]
-    email = keshri.abhishek63@gmail.com
+    email = iam2kabhishek@gmail.com
     name = Abhishek Keshri
+
 [credential]
     helper = cache --timeout 3600
+
 [core]
     editor = nvim
-    pager = delta --dark --theme='OneHalfDark' --highlight-removed
+    pager = delta --dark
+
 [interactive]
-    diffFilter = delta --dark --color-only --theme='OneHalfDark' --highlight-removed
+    diffFilter = delta --color-only
 
 [color]
     ui = true
+
 [protocol]
     version = 2
+
 [pull]
-	rebase = false
+    rebase = false
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[include]
+    path = ~/.config/delta/delta.gitconfig
+
+[delta]
+    features = mantis-shrimp
+
