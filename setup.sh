@@ -4,7 +4,7 @@
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
     pkg install -y curl git zsh python vim neovim tmux bat fzf fasd fd \
-        lsd gh git-delta lazygit openssh pacman ranger
+        lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag
 }
 
 function install_oh_my_zsh {
