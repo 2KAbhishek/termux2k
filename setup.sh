@@ -95,6 +95,7 @@ function distro_tweaks {
 
 function setup_dotfiles {
     echo -e "\u001b[7m Setting up Dotfiles... \u001b[0m"
+    install_packages
     install_oh_my_zsh
     backup_configs
     setup_symlinks
