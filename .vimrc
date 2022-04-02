@@ -6,15 +6,14 @@ set ignorecase     " Do case insensitive matching
 set incsearch      " Show partial matches for a search phrase
 set number         " Show numbers
 set relativenumber " Show relative numbers
-set undolevels=999 " Lots of these 
-set hlsearch       " Highlight Search
+set undolevels=999 " Lots of these
+set nohlsearch     " clear highlights after search
 set tabstop=4      " Tab size
 set shiftwidth=4   " Indentation size
 set softtabstop=4  " Tabs/Spaces interop
 set expandtab      " Expands tab to spaces
 set nomodeline     " Disable as a security precaution
 set mouse=a        " Enable mouse mode
-set termguicolors  " Enable true colors
 set wildmenu       " Enable wildmenu
 set conceallevel=0 " Disable concealing
 set splitbelow     " Natural splits
@@ -27,7 +26,7 @@ set ttimeoutlen=100
 set synmaxcol=500  " Syntax limit
 set laststatus=2   " Always show status line
 set ruler          " Show cursor position
-set scrolloff=3    " Scroll offset
+set scrolloff=8    " Scroll offset
 set sidescrolloff=5
 set autoread       " Reload files on change
 set tabpagemax=50  " More tabs
@@ -40,9 +39,18 @@ set list           " Highlight non whitespace characters
 set nrformats-=octal " 007 != 010
 set sessionoptions-=options
 set viewoptions-=option
+set cursorline     " Highlight current line
+set exrc           " Use vimrc from local dir
+set hidden         " Enable switching with modified buffers
+
+" tmux true color fix
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " Always use terminal background
 autocmd ColorScheme * highlight! Normal ctermbg=NONE guibg=NONE
+autocmd ColorScheme * highlight! Terminal ctermbg=NONE guibg=NONE
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -52,6 +60,11 @@ endif
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\""
+endif
+
+" Remove trailing whitespace on write
+if has("autocmd")
+    autocmd BufWritePre * %s/\s\+$//e
 endif
 
 " Keybindings
@@ -70,39 +83,36 @@ vnoremap U xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
 
-" Vundle Init
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
 " Plugins
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'joshdick/onedark.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'godlygeek/tabular'
-Plugin 'Yggdroot/indentLine'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'w0rp/ale'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'haya14busa/incsearch-easymotion.vim'
-Plugin 'ryanoasis/vim-devicons'
+call plug#begin('~/.vim/plugged')
 
-" Vundle Ends
-call vundle#end()
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sheerun/vim-polyglot'
+Plug 'w0rp/ale'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'pandysong/ghost-text.vim'
+
+call plug#end()
 filetype plugin indent on
 
 " Airline
@@ -163,7 +173,7 @@ map g# <Plug>(incsearch-nohl-g#)
 
 " IndentLine
 let g:indentLine_conceallevel = 2
-let g:indentLine_char ='|'
+let g:indentLine_char =''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
@@ -172,7 +182,6 @@ let g:indentLine_concealcursor = ""
 " NERDTree
 map <Leader>e : NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
