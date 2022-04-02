@@ -8,23 +8,23 @@ function install_oh_my_zsh {
 
 function backup_configs {
     echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
-    mv -iv ~/bin ~/bin.old
-    mv -iv ~/.termux ~/.termux.old
-    mv -iv ~/.config/bat/config ~/.config/bat/config.old
-    mv -iv ~/.config/broot/conf.toml ~/.config/broot/conf.toml.old
-    mv -iv ~/.config/cmus/darkwind.theme ~/.config/cmus/darkwind.theme.old
-    mv -iv ~/.config/delta ~/.config/delta.old
-    mv -iv ~/.config/htop ~/.config/htop.old
-    mv -iv ~/.config/nvim ~/.config/nvim.old
-    mv -iv ~/.config/ranger ~/.config/ranger.old
-    mv -iv ~/.config/shell ~/.config/shell.old
-    mv -iv ~/.bashrc ~/.bashrc.old
-    mv -iv ~/.gitconfig ~/.gitconfig.old
-    mv -iv ~/.p10k.zsh ~/.p10k.zsh.old
-    mv -iv ~/.pystartup ~/.pystartup.old
-    mv -iv ~/.tmux.conf ~/.tmux.conf.old
-    mv -iv ~/.vimrc ~/.vimrc.old
-    mv -iv ~/.zshrc ~/.zshrc.old
+    mv -v ~/bin ~/bin.old
+    mv -v ~/.termux ~/.termux.old
+    mv -v ~/.config/bat/config ~/.config/bat/config.old
+    mv -v ~/.config/broot/conf.toml ~/.config/broot/conf.toml.old
+    mv -v ~/.config/cmus/darkwind.theme ~/.config/cmus/darkwind.theme.old
+    mv -v ~/.config/delta ~/.config/delta.old
+    mv -v ~/.config/htop ~/.config/htop.old
+    mv -v ~/.config/nvim ~/.config/nvim.old
+    mv -v ~/.config/ranger ~/.config/ranger.old
+    mv -v ~/.config/shell ~/.config/shell.old
+    mv -v ~/.bashrc ~/.bashrc.old
+    mv -v ~/.gitconfig ~/.gitconfig.old
+    mv -v ~/.p10k.zsh ~/.p10k.zsh.old
+    mv -v ~/.pystartup ~/.pystartup.old
+    mv -v ~/.tmux.conf ~/.tmux.conf.old
+    mv -v ~/.vimrc ~/.vimrc.old
+    mv -v ~/.zshrc ~/.zshrc.old
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
 }
 
