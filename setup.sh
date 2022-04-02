@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Setup script for Oh-My-Termux
+function install_packages {
+    pkg install -y curl git zsh python vim neovim tmux bat fzf fasd fd \
+        lsd gh git-delta lazygit openssh pacman ranger
+}
+
 function install_oh_my_zsh {
     echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
