@@ -89,11 +89,6 @@ function install_tmux_plugins {
     tmux kill-server
 }
 
-function distro_tweaks {
-    echo -e "\u001b[7m Distro specific tweaks... \u001b[0m"
-    bash "$PWD"/scripts/local_distro.sh
-}
-
 function setup_dotfiles {
     echo -e "\u001b[7m Setting up Dotfiles... \u001b[0m"
     install_packages
@@ -103,7 +98,6 @@ function setup_dotfiles {
     install_zsh_plugins
     install_vim_plugins
     install_tmux_plugins
-    distro_tweaks
     echo -e "\u001b[7m Done! \u001b[0m"
 }
 
@@ -123,7 +117,6 @@ echo -e "  \u001b[34;1m (3) Setup symlinks \u001b[0m"
 echo -e "  \u001b[34;1m (4) Install zsh plugins \u001b[0m"
 echo -e "  \u001b[34;1m (5) Install vim plugins \u001b[0m"
 echo -e "  \u001b[34;1m (6) Install tmux plugins \u001b[0m"
-echo -e "  \u001b[34;1m (7) Distro specific tweaks \u001b[0m"
 echo -e "  \u001b[31;1m (*) Anything else to exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -160,9 +153,6 @@ case $option in
     install_tmux_plugins
     ;;
 
-"7")
-    distro_tweaks
-    ;;
 
 *)
     echo -e "\u001b[31;1m Invalid option entered, Bye! \u001b[0m"
