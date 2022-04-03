@@ -5,3 +5,7 @@
 
 # termux shell
 .termux/shell
+
+# backups
+*.old
+
