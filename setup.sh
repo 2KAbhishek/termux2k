@@ -10,6 +10,7 @@ function install_packages {
 function install_oh_my_zsh {
     echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    chsh -s zsh
 }
 
 function backup_configs {
