@@ -29,7 +29,7 @@ plugins=(zsh-autocomplete
     extract
     fancy-ctrl-z
     fasd
-    fast-syntax-highlighting
+    F-Sy-H
     fzf-tab
     gh
     git
