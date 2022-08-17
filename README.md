@@ -34,7 +34,7 @@
 
 My personal configs, carefully and passionately crafted for setting up an optimal CLI dev experience on the go.
 
-Bootstraps termux with oh-my-zsh, custom p10k prompt, neovim, tmux, ranger & powerline fonts and a bunch of other useful CLI tools and configs.
+Bootstraps `termux` with `oh-my-zsh`, custom `p10k` prompt, `neovim`, `tmux`, `ranger` & `powerline` fonts and a bunch of other useful CLI tools and configs.
 
 ## Inspiration
 
@@ -59,7 +59,7 @@ For installation `git` `curl` & `zsh` are must, other tools are mentioned below.
 
 ### Packages
 
-This list is not complete, package names may vary depending upon your system and your requirements.
+This list is incomplete, package names may vary depending upon your system and your requirements.
 
 ```bash
 # Required
@@ -93,11 +93,11 @@ Oh-My-Termux was built using bits and pieces from my [Dotfiles](https://github.c
 
 ## Challenges faced
 
-Finding workarounds for a few things on termux was a bit challenging.
+Finding workarounds for a few things on `termux` was a bit challenging.
 
 ## What I learned
 
-I learned writing good cross platform bash scripts and also learned a lot about making flexible configs and making them as easy to setup as possible.
+I learned about writing good cross-platform bash scripts and learned a lot about making flexible configs and making them as easy to setup as possible.
 
 ## What's next
 
@@ -108,7 +108,8 @@ Hit the ⭐ button if you found this useful.
 ## More Info
 
 Want the complete CLI+ experience on your *nix system too? have a look at [Dotfiles](https://github.com/2kabhishek/Dotfiles)
-
+Looking for my neovim configs? See [nvim](https://github.com/2kabhishek/nvim)
+Looking for my tmux configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
 Find more cool configs and setups at [GitHub does Dotfiles](https://dotfiles.github.io/)
 
 <div align="center">
