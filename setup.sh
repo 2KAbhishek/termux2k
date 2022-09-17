@@ -38,7 +38,7 @@ function backup_configs {
 function setup_symlinks {
     echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
     ln -sfnv "$PWD/bin" ~/bin
-    ln -sfnv "$PWD/.termux" ~/.termux
+    cp -rv "$PWD/.termux" ~/.termux
     ln -sfnv "$PWD/.config/bat/" ~/.config/
     ln -sfnv "$PWD/.config/broot/" ~/.config/
     ln -sfnv "$PWD/.config/cmus/" ~/.config/
