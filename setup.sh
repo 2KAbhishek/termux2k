@@ -4,7 +4,8 @@
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
     pkg install -y curl git zsh python vim neovim tmux bat fzf fasd fd \
-        lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag termux-tools openssh libssh2
+        lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag \
+        exa unzip htop ripgrep termux-tools openssh;
 }
 
 function install_oh_my_zsh {
@@ -38,7 +39,7 @@ function backup_configs {
 function setup_symlinks {
     echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
     ln -sfnv "$PWD/bin" ~/bin
-    cp -rv "$PWD/.termux" ~/.termux
+    cp -rv "$PWD/.termux" ~
     ln -sfnv "$PWD/.config/bat/" ~/.config/
     ln -sfnv "$PWD/.config/broot/" ~/.config/
     ln -sfnv "$PWD/.config/cmus/" ~/.config/
@@ -79,7 +80,8 @@ function install_vim_plugins {
 
     echo -e "\u001b[7m Installing plugins for vim and nvim... \u001b[0m"
     vim +PlugUpdate +qall
-    nvim -c 'PlugUpdate | PlugClean | quitall'
+    pip install neovim
+    nvim -c UpdateRemotePlugin
 }
 
 function install_tmux_plugins {
