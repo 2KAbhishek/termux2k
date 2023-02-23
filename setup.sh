@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Fetch submodules
+git submodule update --init --recursive
+
 # Setup script for Oh-My-Termux
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
