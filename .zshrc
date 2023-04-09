@@ -20,8 +20,7 @@ COMPLETION_WAITING_DOTS="false"
 SAVEHIST=99999
 
 # Plugins
-plugins=(zsh-autocomplete
-    alias-tips
+plugins=(alias-tips
     catimg
     colorize
     direnv
