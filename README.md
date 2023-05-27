@@ -74,18 +74,18 @@ Powerline patched fonts are required for glyphs. I'll recommend [Nerd Fonts](htt
 
 This repo contains configurations for following tools.
 
-- bash : [~/.bashrc](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.bashrc)
-- bat : [~/.config/bat/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/bat/)
-- broot : [~/.config/broot/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/broot/)
-- cmus : [~/.config/cmus/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/cmus/)
-- git : [~/.gitconfig](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.gitconfig)
-- htop : [~/.config/htop/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/htop/)
-- neovim : [~/.config/nvim/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/nvim/)
-- python : [~/.pystartup](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.pystartup)
-- ranger : [~/.config/ranger/](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.config/ranger/)
-- tmux : [~/.tmux.conf](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.tmux.conf)
-- vim : [~/.vimrc](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.vimrc)
-- zsh : [~/.zshrc](https://github.com/2KAbhishek/Oh-My-Termux/blob/main/.zshrc)
+-   bash : [~/.bashrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.bashrc)
+-   bat : [~/.config/bat/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/bat/)
+-   broot : [~/.config/broot/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/broot/)
+-   cmus : [~/.config/cmus/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/cmus/)
+-   git : [~/.gitconfig](https://github.com/2KAbhishek/Dotfiles/blob/main/.gitconfig)
+-   htop : [~/.config/htop/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/htop/)
+-   neovim : [~/.config/nvim/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/nvim/)
+-   python : [~/.pystartup](https://github.com/2KAbhishek/Dotfiles/blob/main/.pystartup)
+-   ranger : [~/.config/ranger/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/ranger/)
+-   tmux : [~/.tmux.conf](https://github.com/2KAbhishek/Dotfiles/blob/main/.tmux.conf)
+-   vim : [~/.vimrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.vimrc)
+-   zsh : [~/.zshrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.zshrc)
 
 ## How it was built
 
