@@ -1,20 +1,14 @@
 #!/bin/bash
 
 # Fetch submodules
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 # Setup script for Oh-My-Termux
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
     pkg install -y curl git zsh python vim neovim tmux bat fzf fasd fd \
         lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag \
-        exa unzip htop ripgrep termux-tools openssh;
-}
-
-function install_oh_my_zsh {
-    echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    chsh -s zsh
+        exa unzip htop ripgrep termux-tools openssh
 }
 
 function backup_configs {
@@ -43,21 +37,26 @@ function setup_symlinks {
     echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
     ln -sfnv "$PWD/bin" ~/bin
     cp -rv "$PWD/.termux" ~
-    ln -sfnv "$PWD/.config/bat/" ~/.config/
-    ln -sfnv "$PWD/.config/broot/" ~/.config/
-    ln -sfnv "$PWD/.config/cmus/" ~/.config/
-    ln -sfnv "$PWD/.config/delta/" ~/.config/
-    ln -sfnv "$PWD/.config/htop/" ~/.config/
-    ln -sfnv "$PWD/.config/nvim" ~/.config/
-    ln -sfnv "$PWD/.config/ranger/" ~/.config/
-    ln -sfnv "$PWD/.config/shell" ~/.config/
-    ln -sfnv "$PWD/.bashrc" ~/
-    ln -sfnv "$PWD/.gitconfig" ~/
-    ln -sfnv "$PWD/.p10k.zsh" ~/
-    ln -sfnv "$PWD/.pystartup" ~/
-    ln -sfnv "$PWD/.tmux.conf" ~/
-    ln -sfnv "$PWD/.vimrc" ~/
-    ln -sfnv "$PWD/.zshrc" ~/
+    ln -sfnv "$PWD/dots/.config/bat/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/broot/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/cmus/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/delta/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/htop/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/nvim" ~/.config/
+    ln -sfnv "$PWD/dots/.config/ranger/" ~/.config/
+    ln -sfnv "$PWD/dots/.config/shell" ~/.config/
+    ln -sfnv "$PWD/dots/.bashrc" ~/
+    ln -sfnv "$PWD/dots/.gitconfig" ~/
+    ln -sfnv "$PWD/dots/.p10k.zsh" ~/
+    ln -sfnv "$PWD/dots/.pystartup" ~/
+    ln -sfnv "$PWD/dots/.tmux.conf" ~/
+    ln -sfnv "$PWD/dots/.vimrc" ~/
+    ln -sfnv "$PWD/dots/.zshrc" ~/
+}
+
+function install_oh_my_zsh {
+    echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 }
 
 function install_zsh_plugins {
@@ -65,7 +64,7 @@ function install_zsh_plugins {
     git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
     git clone https://github.com/marlonrichert/zsh-autocomplete ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+    git clone https://github.com/clarketm/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
     git clone https://github.com/z-shell/F-Sy-H.git ~/.oh-my-zsh/custom/plugins/F-Sy-H
     git clone https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/alias-tips
     git clone https://github.com/unixorn/git-extra-commands.git ~/.oh-my-zsh/custom/plugins/git-extra-commands
@@ -78,13 +77,11 @@ function install_vim_plugins {
     echo -e "\u001b[7m Installing plugin manager \u001b[0m"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     echo -e "\u001b[7m Installing plugins for vim and nvim... \u001b[0m"
     vim +PlugUpdate +qall
     pip install neovim
-    nvim -c UpdateRemotePlugin
+    nvim -c UpdateRemotePlugins
 }
 
 function install_tmux_plugins {
@@ -96,20 +93,35 @@ function install_tmux_plugins {
     tmux kill-server
 }
 
-function setup_dotfiles {
-    echo -e "\u001b[7m Setting up Dotfiles... \u001b[0m"
-    install_packages
+function install_extras {
     install_oh_my_zsh
-    backup_configs
-    setup_symlinks
     install_zsh_plugins
     install_vim_plugins
     install_tmux_plugins
+}
+
+function setup_dotfiles {
+    echo -e "\u001b[7m Setting up Dotfiles... \u001b[0m"
+    install_packages
+    install_extras
+    backup_configs
+    setup_symlinks
     echo -e "\u001b[7m Done! \u001b[0m"
 }
 
-if [ "$1" = "--all" -o "$1" = "-a" ]; then
+if [ "$1" = "--all" ] || [ "$1" = "-a" ]; then
     setup_dotfiles
+    exit 0
+fi
+
+if [ "$1" = "--install" ] || [ "$1" = "-i" ]; then
+    install_packages
+    install_extras
+    exit 0
+fi
+
+if [ "$1" = "--symlinks" ] || [ "$1" = "-s" ]; then
+    setup_symlinks
     exit 0
 fi
 
@@ -117,13 +129,11 @@ fi
 echo -e "\u001b[32;1m Setting up Dotfiles...\u001b[0m"
 
 echo -e " \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
-echo -e "  \u001b[34;1m (0) Install packages \u001b[0m"
-echo -e "  \u001b[34;1m (1) Install oh-my-zsh \u001b[0m"
-echo -e "  \u001b[34;1m (2) Backup current config \u001b[0m"
-echo -e "  \u001b[34;1m (3) Setup symlinks \u001b[0m"
-echo -e "  \u001b[34;1m (4) Install zsh plugins \u001b[0m"
-echo -e "  \u001b[34;1m (5) Install vim plugins \u001b[0m"
-echo -e "  \u001b[34;1m (6) Install tmux plugins \u001b[0m"
+echo -e "  \u001b[34;1m (0) Setup Everything \u001b[0m"
+echo -e "  \u001b[34;1m (1) Install Packages \u001b[0m"
+echo -e "  \u001b[34;1m (2) Install Extras \u001b[0m"
+echo -e "  \u001b[34;1m (3) Backup Configs \u001b[0m"
+echo -e "  \u001b[34;1m (4) Setup Symlinks \u001b[0m"
 echo -e "  \u001b[31;1m (*) Anything else to exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -133,33 +143,24 @@ read -r option
 case $option in
 
 "0")
-    install_packages
+    setup_dotfiles
     ;;
 
 "1")
-    install_oh_my_zsh
+    install_packages
     ;;
 
 "2")
-    backup_configs
+    install_extras
     ;;
 
 "3")
-    setup_symlinks
+    backup_configs
     ;;
 
 "4")
-    install_zsh_plugins
+    setup_symlinks
     ;;
-
-"5")
-    install_vim_plugins
-    ;;
-
-"6")
-    install_tmux_plugins
-    ;;
-
 
 *)
     echo -e "\u001b[31;1m Invalid option entered, Bye! \u001b[0m"
