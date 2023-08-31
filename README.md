@@ -1,29 +1,29 @@
 <div align = "center">
 
-<h1><a href="https://2kabhishek.github.io/Oh-My-Termux">Oh-My-Termux</a></h1>
+<h1><a href="https://2kabhishek.github.io/termux2k">termux2k</a></h1>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/blob/main/LICENSE">
-<img alt="License" src="https://img.shields.io/github/license/2kabhishek/Oh-My-Termux?style=flat&color=eee&label="> </a>
+<a href="https://github.com/2KAbhishek/termux2k/blob/main/LICENSE">
+<img alt="License" src="https://img.shields.io/github/license/2kabhishek/termux2k?style=flat&color=eee&label="> </a>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/graphs/contributors">
-<img alt="People" src="https://img.shields.io/github/contributors/2kabhishek/Oh-My-Termux?style=flat&color=ffaaf2&label=People"> </a>
+<a href="https://github.com/2KAbhishek/termux2k/graphs/contributors">
+<img alt="People" src="https://img.shields.io/github/contributors/2kabhishek/termux2k?style=flat&color=ffaaf2&label=People"> </a>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/stargazers">
-<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/Oh-My-Termux?style=flat&color=98c379&label=Stars"></a>
+<a href="https://github.com/2KAbhishek/termux2k/stargazers">
+<img alt="Stars" src="https://img.shields.io/github/stars/2kabhishek/termux2k?style=flat&color=98c379&label=Stars"></a>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/network/members">
-<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/Oh-My-Termux?style=flat&color=66a8e0&label=Forks"> </a>
+<a href="https://github.com/2KAbhishek/termux2k/network/members">
+<img alt="Forks" src="https://img.shields.io/github/forks/2kabhishek/termux2k?style=flat&color=66a8e0&label=Forks"> </a>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/watchers">
-<img alt="Watches" src="https://img.shields.io/github/watchers/2kabhishek/Oh-My-Termux?style=flat&color=f5d08b&label=Watches"> </a>
+<a href="https://github.com/2KAbhishek/termux2k/watchers">
+<img alt="Watches" src="https://img.shields.io/github/watchers/2kabhishek/termux2k?style=flat&color=f5d08b&label=Watches"> </a>
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux/pulse">
-<img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/Oh-My-Termux?style=flat&color=e06c75&label="> </a>
+<a href="https://github.com/2KAbhishek/termux2k/pulse">
+<img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/termux2k?style=flat&color=e06c75&label="> </a>
 
 <h3>Dev CLI setup, in the palm of your hands ✋📱</h3>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/2KAbhishek/Oh-My-Termux/master/images/screenshot.jpg" alt="Oh-My-Termux Demo" style="width:100%">
+  <img src="https://raw.githubusercontent.com/2KAbhishek/termux2k/master/images/screenshot.jpg" alt="termux2k Demo" style="width:100%">
   <br/>
   <figcaption>Termux screenshot</figcaption>
 </figure>
@@ -43,8 +43,8 @@ Wanting a super portable CLI dev setup.
 ## Setup
 
 ```bash
-git clone https://github.com/2kabhishek/Oh-My-Termux
-cd Oh-My-Termux
+git clone https://github.com/2kabhishek/termux2k
+cd termux2k
 
 # Menu based interactive setup
 ./setup.sh
@@ -89,7 +89,7 @@ This repo contains configurations for following tools.
 
 ## How it was built
 
-Oh-My-Termux was built using bits and pieces from my [Dotfiles](https://github.com/2kabhishek/Dotfiles), repurposed and tweaked to fit this use case
+termux2k was built using bits and pieces from my [Dotfiles](https://github.com/2kabhishek/Dotfiles), repurposed and tweaked to fit this use case
 
 ## Challenges faced
 
@@ -117,7 +117,7 @@ Find more cool configs and setups at [GitHub does Dotfiles](https://dotfiles.git
 
 <div align="center">
 
-<a href="https://github.com/2KAbhishek/Oh-My-Termux">Source</a> |
-<a href="https://2kabhishek.github.io/Oh-My-Termux">Website</a>
+<a href="https://github.com/2KAbhishek/termux2k">Source</a> |
+<a href="https://2kabhishek.github.io/termux2k">Website</a>
 
 </div>
