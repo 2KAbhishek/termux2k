@@ -37,21 +37,21 @@ function setup_symlinks {
     echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
     ln -sfnv "$PWD/bin" ~/bin
     cp -rv "$PWD/.termux" ~
-    ln -sfnv "$PWD/dots/.config/bat/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/broot/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/cmus/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/delta/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/htop/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/nvim" ~/.config/
-    ln -sfnv "$PWD/dots/.config/ranger/" ~/.config/
-    ln -sfnv "$PWD/dots/.config/shell" ~/.config/
-    ln -sfnv "$PWD/dots/.bashrc" ~/
-    ln -sfnv "$PWD/dots/.gitconfig" ~/
-    ln -sfnv "$PWD/dots/.p10k.zsh" ~/
-    ln -sfnv "$PWD/dots/.pystartup" ~/
-    ln -sfnv "$PWD/dots/.tmux.conf" ~/
-    ln -sfnv "$PWD/dots/.vimrc" ~/
-    ln -sfnv "$PWD/dots/.zshrc" ~/
+    ln -sfnv "$PWD/dots/config/bat/" ~/.config/
+    ln -sfnv "$PWD/dots/config/broot/" ~/.config/
+    ln -sfnv "$PWD/dots/config/cmus/" ~/.config/
+    ln -sfnv "$PWD/dots/config/delta/" ~/.config/
+    ln -sfnv "$PWD/dots/config/htop/" ~/.config/
+    ln -sfnv "$PWD/dots/config/nvim" ~/.config/
+    ln -sfnv "$PWD/dots/config/ranger/" ~/.config/
+    ln -sfnv "$PWD/dots/config/shell" ~/.config/
+    ln -sfnv "$PWD/dots/config/.bashrc" ~/
+    ln -sfnv "$PWD/dots/config/.gitconfig" ~/
+    ln -sfnv "$PWD/dots/config/.p10k.zsh" ~/
+    ln -sfnv "$PWD/dots/config/.pystartup" ~/
+    ln -sfnv "$PWD/dots/config/.tmux.conf" ~/
+    ln -sfnv "$PWD/dots/config/.vimrc" ~/
+    ln -sfnv "$PWD/dots/config/.zshrc" ~/
 }
 
 function install_oh_my_zsh {
