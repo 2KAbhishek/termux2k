@@ -15,6 +15,7 @@ function backup_configs {
     echo -e "\u001b[33;1m Backing up existing files... \u001b[0m"
     mv -v ~/bin ~/bin.old
     mv -v ~/.termux ~/.termux.old
+
     mv -v ~/.config/bat/config ~/.config/bat/config.old
     mv -v ~/.config/broot/conf.toml ~/.config/broot/conf.toml.old
     mv -v ~/.config/cmus/darkwind.theme ~/.config/cmus/darkwind.theme.old
@@ -35,8 +36,9 @@ function backup_configs {
 
 function setup_symlinks {
     echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
-    ln -sfnv "$PWD/bin" ~/bin
-    cp -rv "$PWD/.termux" ~
+    ln -sfnv "$PWD/config/bin" ~/bin
+    cp -rv "$PWD/config/.termux" ~/
+
     ln -sfnv "$PWD/dots/config/bat/" ~/.config/
     ln -sfnv "$PWD/dots/config/broot/" ~/.config/
     ln -sfnv "$PWD/dots/config/cmus/" ~/.config/
