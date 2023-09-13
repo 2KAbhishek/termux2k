@@ -21,10 +21,12 @@ function backup_configs {
     mv -v ~/.config/cmus/darkwind.theme ~/.config/cmus/darkwind.theme.old
     mv -v ~/.config/delta ~/.config/delta.old
     mv -v ~/.config/htop ~/.config/htop.old
+    mv -v ~/.config/lazygit ~/.config/lazygit.old
     mv -v ~/.config/nvim ~/.config/nvim.old
     mv -v ~/.config/ranger ~/.config/ranger.old
     mv -v ~/.config/shell ~/.config/shell.old
     mv -v ~/.bashrc ~/.bashrc.old
+    mv -v ~/.dircolors ~/.dircolors.old
     mv -v ~/.gitconfig ~/.gitconfig.old
     mv -v ~/.p10k.zsh ~/.p10k.zsh.old
     mv -v ~/.pystartup ~/.pystartup.old
@@ -44,10 +46,12 @@ function setup_symlinks {
     ln -sfnv "$PWD/dots/config/cmus/" ~/.config/
     ln -sfnv "$PWD/dots/config/delta/" ~/.config/
     ln -sfnv "$PWD/dots/config/htop/" ~/.config/
+    ln -sfnv "$PWD/dots/config/lazygit/" ~/.config/
     ln -sfnv "$PWD/dots/config/nvim" ~/.config/
     ln -sfnv "$PWD/dots/config/ranger/" ~/.config/
     ln -sfnv "$PWD/dots/config/shell" ~/.config/
     ln -sfnv "$PWD/dots/config/.bashrc" ~/
+    ln -sfnv "$PWD/dots/config/.dircolors" ~/
     ln -sfnv "$PWD/dots/config/.gitconfig" ~/
     ln -sfnv "$PWD/dots/config/.p10k.zsh" ~/
     ln -sfnv "$PWD/dots/config/.pystartup" ~/
