@@ -28,6 +28,7 @@ function backup_configs {
     mv -v ~/.bashrc ~/.bashrc.old
     mv -v ~/.dircolors ~/.dircolors.old
     mv -v ~/.gitconfig ~/.gitconfig.old
+    mv -v ~/.npmrc ~/.npmrc.old
     mv -v ~/.p10k.zsh ~/.p10k.zsh.old
     mv -v ~/.pystartup ~/.pystartup.old
     mv -v ~/.tmux.conf ~/.tmux.conf.old
@@ -53,6 +54,7 @@ function setup_symlinks {
     ln -sfnv "$PWD/dots/config/.bashrc" ~/
     ln -sfnv "$PWD/dots/config/.dircolors" ~/
     ln -sfnv "$PWD/dots/config/.gitconfig" ~/
+    ln -sfnv "$PWD/dots/config/.npmrc" ~/
     ln -sfnv "$PWD/dots/config/.p10k.zsh" ~/
     ln -sfnv "$PWD/dots/config/.pystartup" ~/
     ln -sfnv "$PWD/dots/config/.tmux.conf" ~/
