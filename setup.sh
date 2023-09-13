@@ -30,9 +30,11 @@ function backup_configs {
     mv -v ~/.gitconfig ~/.gitconfig.old
     mv -v ~/.npmrc ~/.npmrc.old
     mv -v ~/.p10k.zsh ~/.p10k.zsh.old
+    mv -v ~/.prettierrc ~/.prettierrc.old
     mv -v ~/.pystartup ~/.pystartup.old
     mv -v ~/.tmux.conf ~/.tmux.conf.old
     mv -v ~/.vimrc ~/.vimrc.old
+    mv -v ~/.Xresources ~/.Xresources.old
     mv -v ~/.zshrc ~/.zshrc.old
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
 }
@@ -56,9 +58,11 @@ function setup_symlinks {
     ln -sfnv "$PWD/dots/config/.gitconfig" ~/
     ln -sfnv "$PWD/dots/config/.npmrc" ~/
     ln -sfnv "$PWD/dots/config/.p10k.zsh" ~/
+    ln -sfnv "$PWD/dots/config/.prettierrc" ~/
     ln -sfnv "$PWD/dots/config/.pystartup" ~/
     ln -sfnv "$PWD/dots/config/.tmux.conf" ~/
     ln -sfnv "$PWD/dots/config/.vimrc" ~/
+    ln -sfnv "$PWD/dots/config/.Xresources" ~/
     ln -sfnv "$PWD/dots/config/.zshrc" ~/
 }
 
