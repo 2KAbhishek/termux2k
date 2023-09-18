@@ -25,6 +25,7 @@ function backup_configs {
     mv -v ~/.config/nvim ~/.config/nvim.old
     mv -v ~/.config/ranger ~/.config/ranger.old
     mv -v ~/.config/shell ~/.config/shell.old
+    mv -v ~/.config/topgrade.toml ~/.config/topgrade.toml.old
     mv -v ~/.bashrc ~/.bashrc.old
     mv -v ~/.dircolors ~/.dircolors.old
     mv -v ~/.gitconfig ~/.gitconfig.old
@@ -53,6 +54,7 @@ function setup_symlinks {
     ln -sfnv "$PWD/dots/config/nvim" ~/.config/
     ln -sfnv "$PWD/dots/config/ranger/" ~/.config/
     ln -sfnv "$PWD/dots/config/shell" ~/.config/
+    ln -sfnv "$PWD/dots/config/topgrade.toml" ~/.config/
     ln -sfnv "$PWD/dots/config/.bashrc" ~/
     ln -sfnv "$PWD/dots/config/.dircolors" ~/
     ln -sfnv "$PWD/dots/config/.gitconfig" ~/
