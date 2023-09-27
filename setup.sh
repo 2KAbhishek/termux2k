@@ -6,7 +6,7 @@ git submodule update --init --recursive --remote
 # Setup script for Oh-My-Termux
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
-    pkg install -y curl git zsh python vim neovim tmux bat fzf fasd fd \
+    pkg install -y curl git zsh python vim neovim tmux bat fzf zoxide fd \
         lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag \
         exa unzip htop ripgrep termux-tools openssh
 }
