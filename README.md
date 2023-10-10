@@ -107,9 +107,9 @@ Hit the ⭐ button if you found this useful.
 
 ## More Info
 
-Want the complete CLI experience on your nix system too? Have a look at [Dotfiles](https://github.com/2kabhishek/Dotfiles)
+Want the complete CLI experience on your workstation too? Have a look at [dots2k](https://github.com/2kabhishek/dots2k)
 
-Looking for my `neovim` configs? See [nvim](https://github.com/2kabhishek/nvim)
+Looking for my `neovim` configs? See [nvim2k](https://github.com/2kabhishek/nvim2k)
 
 Looking for my `tmux` configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
 
