@@ -7,7 +7,7 @@ git submodule update --init --recursive --remote
 function install_packages {
     echo -e "\u001b[7m Installing required packages... \u001b[0m"
     pkg install -y curl git zsh python vim neovim tmux bat fzf zoxide fd \
-        lsd gh git-delta lazygit openssh pacman ranger silversearcher-ag \
+        lsd gh git-delta lazygit openssh ranger ripgrep \
         exa unzip htop ripgrep termux-tools openssh
 }
 
@@ -59,8 +59,7 @@ function setup_symlinks {
     ln -sfnv "$PWD/dots/config/.dircolors" ~/
     ln -sfnv "$PWD/dots/config/.gitconfig" ~/
     ln -sfnv "$PWD/dots/config/.npmrc" ~/
-    ln -sfnv "$PWD/dots/config/.p10k.zsh" ~/
-    ln -sfnv "$PWD/dots/config/.prettierrc" ~/
+:c
     ln -sfnv "$PWD/dots/config/.pystartup" ~/
     ln -sfnv "$PWD/dots/config/.tmux.conf" ~/
     ln -sfnv "$PWD/dots/config/.vimrc" ~/
