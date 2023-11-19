@@ -1,8 +1,11 @@
 #!/bin/bash
 
-git submodule update --init --recursive --remote
+function setup {
+    cd "$PWD/dots2k" && ./setup.sh && cd .. || exit 1
+}
 
-cd "$PWD/dots2k" && ./setup.sh && cd .. || exit 1
-
-ln -sfn "$PWD/config/bin" ~/bin
-cp -r "$PWD/config/.termux" ~/
+if [ -f "$PWD/dots2k/setup.sh" ]; then
+    setup
+else
+    git submodule update --init --recursive --remote && setup
+fi
