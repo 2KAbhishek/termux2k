@@ -22,7 +22,6 @@ function backup_configs {
     mv -v ~/.config/delta ~/.config/delta.old
     mv -v ~/.config/htop ~/.config/htop.old
     mv -v ~/.config/lazygit ~/.config/lazygit.old
-    mv -v ~/.config/nvim ~/.config/nvim.old
     mv -v ~/.config/ranger ~/.config/ranger.old
     mv -v ~/.config/shell ~/.config/shell.old
     mv -v ~/.config/topgrade.toml ~/.config/topgrade.toml.old
@@ -30,7 +29,7 @@ function backup_configs {
     mv -v ~/.dircolors ~/.dircolors.old
     mv -v ~/.gitconfig ~/.gitconfig.old
     mv -v ~/.npmrc ~/.npmrc.old
-    mv -v ~/.p10k.zsh ~/.p10k.zsh.old
+    mv -v ~/.pryrc ~/.pryrc.old
     mv -v ~/.prettierrc ~/.prettierrc.old
     mv -v ~/.pystartup ~/.pystartup.old
     mv -v ~/.tmux.conf ~/.tmux.conf.old
@@ -45,26 +44,26 @@ function setup_symlinks {
     ln -sfnv "$PWD/config/bin" ~/bin
     cp -rv "$PWD/config/.termux" ~/
 
-    ln -sfnv "$PWD/dots/config/bat/" ~/.config/
-    ln -sfnv "$PWD/dots/config/broot/" ~/.config/
-    ln -sfnv "$PWD/dots/config/cmus/" ~/.config/
-    ln -sfnv "$PWD/dots/config/delta/" ~/.config/
-    ln -sfnv "$PWD/dots/config/htop/" ~/.config/
-    ln -sfnv "$PWD/dots/config/lazygit/" ~/.config/
-    ln -sfnv "$PWD/dots/config/nvim" ~/.config/
-    ln -sfnv "$PWD/dots/config/ranger/" ~/.config/
-    ln -sfnv "$PWD/dots/config/shell" ~/.config/
-    ln -sfnv "$PWD/dots/config/topgrade.toml" ~/.config/
-    ln -sfnv "$PWD/dots/config/.bashrc" ~/
-    ln -sfnv "$PWD/dots/config/.dircolors" ~/
-    ln -sfnv "$PWD/dots/config/.gitconfig" ~/
-    ln -sfnv "$PWD/dots/config/.npmrc" ~/
-:c
-    ln -sfnv "$PWD/dots/config/.pystartup" ~/
-    ln -sfnv "$PWD/dots/config/.tmux.conf" ~/
-    ln -sfnv "$PWD/dots/config/.vimrc" ~/
-    ln -sfnv "$PWD/dots/config/.Xresources" ~/
-    ln -sfnv "$PWD/dots/config/.zshrc" ~/
+    ln -sfnv "$PWD/dots2k/config/bat/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/broot/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/cmus/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/delta/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/htop/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/lazygit/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/ranger/" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/shell" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/topgrade.toml" ~/.config/
+    ln -sfnv "$PWD/dots2k/config/.bashrc" ~/
+    ln -sfnv "$PWD/dots2k/config/.dircolors" ~/
+    ln -sfnv "$PWD/dots2k/config/.gitconfig" ~/
+    ln -sfnv "$PWD/dots2k/config/.npmrc" ~/
+    ln -sfnv "$PWD/dots2k/config/.prettierrc" ~/
+    ln -sfnv "$PWD/dots2k/config/.pryrc" ~/
+    ln -sfnv "$PWD/dots2k/config/.pystartup" ~/
+    ln -sfnv "$PWD/dots2k/config/.tmux.conf" ~/
+    ln -sfnv "$PWD/dots2k/config/.vimrc" ~/
+    ln -sfnv "$PWD/dots2k/config/.Xresources" ~/
+    ln -sfnv "$PWD/dots2k/config/.zshrc" ~/
 }
 
 function install_oh_my_zsh {
