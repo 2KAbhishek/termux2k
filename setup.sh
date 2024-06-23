@@ -1,11 +1,15 @@
 #!/bin/bash
 
-function setup {
+setup_termux2k() {
     cd "$PWD/dots2k" && ./setup.sh && cd .. || exit 1
 }
 
-if [ -f "$PWD/dots2k/setup.sh" ]; then
-    setup
-else
-    git submodule update --init --recursive --remote && setup
-fi
+main() {
+    if [ -f "$PWD/dots2k/setup.sh" ]; then
+        setup_termux2k
+    else
+        git submodule update --init --recursive --remote && setup_termux2k
+    fi
+}
+
+main "$@"
