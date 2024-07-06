@@ -49,47 +49,17 @@ cd termux2k
 # Menu based interactive setup
 ./setup.sh
 
-# Setup everythin unattended
+# Setup everything unattended
 ./setup.sh -a
 ```
 
-## Requirements
+### Next Steps
 
-For installation `git` `curl` & `zsh` are must, other tools are mentioned below.
-
-### Packages
-
-This list is incomplete, package names may vary depending upon your system and your requirements.
-
-```bash
-# Required
-git, zsh, neovim, tmux, git-delta, bat, fd, fzf, fasd, ag(silver_surfer), curl, powerline, lsd
-# Optional
-ranger, cmus, htop, python, vim, broot, bash, ncdu, grc, exa, xplr
-```
-
-Powerline patched fonts are required for glyphs. I'll recommend [Nerd Fonts](https://www.nerdfonts.com/). I'm using FiraCode.
-
-### Included Configurations
-
-This repo contains configurations for following tools.
-
--   bash : [~/.bashrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.bashrc)
--   bat : [~/.config/bat/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/bat/)
--   broot : [~/.config/broot/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/broot/)
--   cmus : [~/.config/cmus/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/cmus/)
--   git : [~/.gitconfig](https://github.com/2KAbhishek/Dotfiles/blob/main/.gitconfig)
--   htop : [~/.config/htop/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/htop/)
--   neovim : [~/.config/nvim/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/nvim/)
--   python : [~/.pystartup](https://github.com/2KAbhishek/Dotfiles/blob/main/.pystartup)
--   ranger : [~/.config/ranger/](https://github.com/2KAbhishek/Dotfiles/blob/main/.config/ranger/)
--   tmux : [~/.tmux.conf](https://github.com/2KAbhishek/Dotfiles/blob/main/.tmux.conf)
--   vim : [~/.vimrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.vimrc)
--   zsh : [~/.zshrc](https://github.com/2KAbhishek/Dotfiles/blob/main/.zshrc)
+You can follow the instructions from [dots2k](https://github.com/2kabhishek/dots2k?tab=readme-ov-file#next-steps) to setup termux2k.
 
 ## How it was built
 
-termux2k was built using bits and pieces from my [Dotfiles](https://github.com/2kabhishek/Dotfiles), repurposed and tweaked to fit this use case
+termux2k was built using bits and pieces from my [dots2k](https://github.com/2kabhishek/dots2k), repurposed and tweaked to fit the android use case
 
 ## Challenges faced
 
@@ -111,7 +81,7 @@ Want the complete CLI experience on your workstation too? Have a look at [dots2k
 
 Looking for my `neovim` configs? See [nvim2k](https://github.com/2kabhishek/nvim2k)
 
-Looking for my `tmux` configs? See [tmux2k](https://github.com/2kabhishek/tmux2k)
+Looking for my `tmux` theme? See [tmux2k](https://github.com/2kabhishek/tmux2k)
 
 Find more cool configs and setups at [GitHub does Dotfiles](https://dotfiles.github.io/)
 
