@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setup_termux2k() {
     cd "$PWD/dots2k" && ./setup.sh "$@" && cd .. || exit 1
