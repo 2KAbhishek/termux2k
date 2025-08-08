@@ -16,7 +16,7 @@
     <key c="p" ne="0" sw=")"/>
   </row>
   <row>
-    <key shift="0.5" c="a" nw="tab" ne="~" sw="`"/>
+    <key shift="0.5" c="a" ne="~" sw="`"/>
     <key c="s" sw="-" ne="_"/>
     <key c="d" sw="=" ne="+"/>
     <key c="f" sw="[" ne="{"/>
@@ -27,7 +27,7 @@
     <key c="l" sw="|" ne="\?"/>
   </row>
   <row>
-    <key width="1.5" c="shift" ne="tab" nw="capslock"/>
+    <key width="1.5" c="shift" ne="tab" sw="capslock"/>
     <key c="z" sw="&lt;" ne=","/>
     <key c="x" sw="&gt;" ne="."/>
     <key c="c" sw="~" ne="₹"/>
@@ -35,13 +35,13 @@
     <key c="b" sw="!" ne="\?"/>
     <key c="n" sw="-" ne="_"/>
     <key c="m" sw="," ne="."/>
-    <key width="1.5" c="backspace" nw="esc" ne="delete"/>
+    <key width="1.5" c="backspace" n="esc" s="delete" w="delete_word" e="forward_delete_word"/>
   </row>
   <row height="0.9">
-    <key width="1.5" key0="ctrl" key2="meta" key3="switch_clipboard" key4="switch_numeric"/>
-    <key width="1.3" key0="fn" key1="alt" key2="change_method" key3="switch_emoji" key4="config"/>
-    <key width="4.4" key0="space" key7="switch_forward" key8="switch_backward" key5="cursor_left" key6="cursor_right"/>
-    <key width="1.3" key0="compose" key7="up" key6="right" key5="left" key8="down"/>
-    <key width="1.5" key0="enter" key1="voice_typing" key2="action"/>
+    <key width="1.5" c="ctrl" ne="meta" nw="config" />
+    <key width="1.3" c="fn" ne="alt" nw="change_method"/>
+    <key width="4.4" c="space" n="up" s="down" w="cursor_left" e="cursor_right"/>
+    <key width="1.3" c="switch_emoji" ne="switch_numeric" nw="switch_clipboard"/>
+    <key width="1.5" c="enter" nw="voice_typing" ne="action"/>
   </row>
 </keyboard>
