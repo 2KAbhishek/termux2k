@@ -21,17 +21,17 @@
     <key c="d" sw="=" ne="+"/>
     <key c="f" sw="[" ne="{"/>
     <key c="g" sw="]" ne="}"/>
-    <key c="h" sw="/" ne="="/>
+    <key c="h" sw="|" ne="="/>
     <key c="j" sw=";" ne=":"/>
     <key c="k" sw="'" ne="&quot;"/>
-    <key c="l" sw="|" ne="\?"/>
+    <key c="l" sw="/" ne="\?"/>
   </row>
   <row>
     <key width="1.5" c="shift" ne="tab" sw="capslock"/>
     <key c="z" sw="&lt;" ne=","/>
     <key c="x" sw="&gt;" ne="."/>
-    <key c="c" sw="~" ne="₹"/>
-    <key c="v" sw="|" ne="\"/>
+    <key c="c" sw="~" ne="`"/>
+    <key c="v" sw="/" ne="\"/>
     <key c="b" sw="!" ne="\?"/>
     <key c="n" sw="-" ne="_"/>
     <key c="m" sw="," ne="."/>
