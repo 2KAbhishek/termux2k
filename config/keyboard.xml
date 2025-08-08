@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Full guide on how to edit the layout: https://github.com/Julow/Unexpected-Keyboard/tree/master/doc/Custom-layouts.md -->
-<keyboard name=" Qwerty Dev Compact" script="latin">
+<!-- Full guide on how to edit the layout:
+     https://github.com/Julow/Unexpected-Keyboard/tree/master/doc/Custom-layouts.md -->
+
+<keyboard bottom_row="false" name="Qwerty Dev Compact" script="latin">
   <row>
     <key c="q" nw="esc" ne="1" sw="!"/>
     <key c="w" ne="2" sw="@"/>
@@ -34,5 +36,12 @@
     <key c="n" sw="-" ne="_"/>
     <key c="m" sw="," ne="."/>
     <key width="1.5" c="backspace" nw="esc" ne="delete"/>
+  </row>
+  <row height="0.9">
+    <key width="1.5" key0="ctrl" key2="meta" key3="switch_clipboard" key4="switch_numeric"/>
+    <key width="1.3" key0="fn" key1="alt" key2="change_method" key3="switch_emoji" key4="config"/>
+    <key width="4.4" key0="space" key7="switch_forward" key8="switch_backward" key5="cursor_left" key6="cursor_right"/>
+    <key width="1.3" key0="compose" key7="up" key6="right" key5="left" key8="down"/>
+    <key width="1.5" key0="enter" key1="voice_typing" key2="action"/>
   </row>
 </keyboard>
