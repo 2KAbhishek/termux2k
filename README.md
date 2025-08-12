@@ -42,6 +42,11 @@ Wanting a super portable CLI dev setup.
 
 ## Setup
 
+### Requirements
+
+- [termux](https://github.com/termux/termux-app)
+- [unexpected keyboard](https://github.com/Julow/Unexpected-Keyboard) with my [custom layout](./config/keyboard.xml)
+
 ```bash
 git clone https://github.com/2kabhishek/termux2k
 cd termux2k
