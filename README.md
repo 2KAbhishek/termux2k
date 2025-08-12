@@ -23,9 +23,9 @@
 <h3>Dev CLI setup, in the palm of your hands ✋📱</h3>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/2KAbhishek/termux2k/master/images/screenshot.jpg" alt="termux2k Demo" style="width:100%">
+  <img src="https://raw.githubusercontent.com/2KAbhishek/termux2k/master/docs/images/screenshot.png" alt="termux2k Demo" style="width:100%">
   <br/>
-  <figcaption>Termux screenshot</figcaption>
+  <figcaption>termux2k in action</figcaption>
 </figure>
 
 </div>
